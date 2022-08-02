@@ -42,6 +42,7 @@ class FillDefaultAdminUserAndPermissions extends Migration
      * @var string
      */
     protected $password = '7edImc7FDQ';
+    protected $passwordStudent = "student.7";
 
     /**
      * FillDefaultAdminUserAndPermissions constructor.
@@ -99,6 +100,7 @@ class FillDefaultAdminUserAndPermissions extends Migration
                     return $permission === 'admin.admin-user.impersonal-login';
                 }),
             ],
+
         ];
 
         //Add new users

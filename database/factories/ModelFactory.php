@@ -31,3 +31,63 @@ $factory->define(App\Models\Post::class, static function (Faker\Generator $faker
         
     ];
 });
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Role::class, static function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->firstName,
+        'guard_name' => $faker->sentence,
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Permission::class, static function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->firstName,
+        'guard_name' => $faker->sentence,
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\User::class, static function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->firstName,
+        'ci' => $faker->sentence,
+        'phone' => $faker->sentence,
+        'address' => $faker->sentence,
+        'date_bird' => $faker->date(),
+        'gender' => $faker->sentence,
+        'country' => $faker->sentence,
+        'city' => $faker->sentence,
+        'province' => $faker->sentence,
+        'email' => $faker->email,
+        'email_verified_at' => $faker->dateTime,
+        'password' => bcrypt($faker->password),
+        'remember_token' => null,
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\RoleHasPermission::class, static function (Faker\Generator $faker) {
+    return [
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\RoleHasPermission::class, static function (Faker\Generator $faker) {
+    return [
+        'permission_id' => $faker->sentence,
+        'role_id' => $faker->sentence,
+        
+        
+    ];
+});
