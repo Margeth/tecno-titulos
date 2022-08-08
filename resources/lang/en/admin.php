@@ -144,5 +144,91 @@ return [
         ],
     ],
 
+    'type-academic-degree' => [
+        'title' => 'Type Academic Degree',
+
+        'actions' => [
+            'index' => 'Type Academic Degree',
+            'create' => 'New Type Academic Degree',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'name' => 'Name',
+            
+        ],
+    ],
+
+    'entity' => [
+        'title' => 'Entity',
+
+        'actions' => [
+            'index' => 'Entity',
+            'create' => 'New Entity',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'code' => 'Code',
+            'name' => 'Name',
+            
+        ],
+    ],
+
+    'academic-degree' => [
+        'title' => 'Academic Degree',
+
+        'actions' => [
+            'index' => 'Academic Degree',
+            'create' => 'New Academic Degree',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'id_entity' => 'Id entity',
+            'id_type' => 'Id type',
+            'name' => 'Name',
+            
+        ],
+    ],
+
+    'requirement' => [
+        'title' => 'Requirement',
+
+        'actions' => [
+            'index' => 'Requirement',
+            'create' => 'New Requirement',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'name' => 'Name',
+            'quantity' => 'Quantity',
+            'observation' => 'Observation',
+            
+        ],
+    ],
+
+    'academic-degree-requirement' => [
+        'title' => 'Academic Degree Requirement',
+
+        'actions' => [
+            'index' => 'Academic Degree Requirement',
+            'create' => 'New Academic Degree Requirement',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'id_type_academic_degree' => 'Id type academic degree',
+            'id_requirement' => 'Id requirement',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

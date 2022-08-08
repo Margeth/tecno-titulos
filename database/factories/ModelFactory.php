@@ -91,3 +91,49 @@ $factory->define(App\Models\RoleHasPermission::class, static function (Faker\Gen
         
     ];
 });
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\TypeAcademicDegree::class, static function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->firstName,
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Entity::class, static function (Faker\Generator $faker) {
+    return [
+        'code' => $faker->sentence,
+        'name' => $faker->firstName,
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\AcademicDegree::class, static function (Faker\Generator $faker) {
+    return [
+        'id_entity' => $faker->randomNumber(5),
+        'id_type' => $faker->randomNumber(5),
+        'name' => $faker->firstName,
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Requirement::class, static function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->firstName,
+        'quantity' => $faker->randomNumber(5),
+        'observation' => $faker->sentence,
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\AcademicDegreeRequirement::class, static function (Faker\Generator $faker) {
+    return [
+        'id_type_academic_degree' => $faker->randomNumber(5),
+        'id_requirement' => $faker->randomNumber(5),
+        
+        
+    ];
+});

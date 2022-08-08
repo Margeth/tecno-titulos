@@ -6,3 +6,8 @@ import './role';
 import './permission';
 import './user';
 import './role-has-permission';
+import './type-academic-degree';
+import './entity';
+import './academic-degree';
+import './requirement';
+import './academic-degree-requirement';

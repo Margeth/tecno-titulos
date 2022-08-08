@@ -104,3 +104,78 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
         });
     });
 });
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('type-academic-degrees')->name('type-academic-degrees/')->group(static function() {
+            Route::get('/',                                             'TypeAcademicDegreeController@index')->name('index');
+            Route::get('/create',                                       'TypeAcademicDegreeController@create')->name('create');
+            Route::post('/',                                            'TypeAcademicDegreeController@store')->name('store');
+            Route::get('/{typeAcademicDegree}/edit',                    'TypeAcademicDegreeController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'TypeAcademicDegreeController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{typeAcademicDegree}',                        'TypeAcademicDegreeController@update')->name('update');
+            Route::delete('/{typeAcademicDegree}',                      'TypeAcademicDegreeController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('entities')->name('entities/')->group(static function() {
+            Route::get('/',                                             'EntityController@index')->name('index');
+            Route::get('/create',                                       'EntityController@create')->name('create');
+            Route::post('/',                                            'EntityController@store')->name('store');
+            Route::get('/{entity}/edit',                                'EntityController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'EntityController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{entity}',                                    'EntityController@update')->name('update');
+            Route::delete('/{entity}',                                  'EntityController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('academic-degrees')->name('academic-degrees/')->group(static function() {
+            Route::get('/',                                             'AcademicDegreeController@index')->name('index');
+            Route::get('/create',                                       'AcademicDegreeController@create')->name('create');
+            Route::post('/',                                            'AcademicDegreeController@store')->name('store');
+            Route::get('/{academicDegree}/edit',                        'AcademicDegreeController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'AcademicDegreeController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{academicDegree}',                            'AcademicDegreeController@update')->name('update');
+            Route::delete('/{academicDegree}',                          'AcademicDegreeController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('requirements')->name('requirements/')->group(static function() {
+            Route::get('/',                                             'RequirementController@index')->name('index');
+            Route::get('/create',                                       'RequirementController@create')->name('create');
+            Route::post('/',                                            'RequirementController@store')->name('store');
+            Route::get('/{requirement}/edit',                           'RequirementController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'RequirementController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{requirement}',                               'RequirementController@update')->name('update');
+            Route::delete('/{requirement}',                             'RequirementController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('academic-degree-requirements')->name('academic-degree-requirements/')->group(static function() {
+            Route::get('/',                                             'AcademicDegreeRequirementController@index')->name('index');
+            Route::get('/create',                                       'AcademicDegreeRequirementController@create')->name('create');
+            Route::post('/',                                            'AcademicDegreeRequirementController@store')->name('store');
+            Route::get('/{academicDegreeRequirement}/edit',             'AcademicDegreeRequirementController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'AcademicDegreeRequirementController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{academicDegreeRequirement}',                 'AcademicDegreeRequirementController@update')->name('update');
+            Route::delete('/{academicDegreeRequirement}',               'AcademicDegreeRequirementController@destroy')->name('destroy');
+        });
+    });
+});
