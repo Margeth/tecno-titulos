@@ -241,3 +241,33 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
         });
     });
 });
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('minutes')->name('minutes/')->group(static function() {
+            Route::get('/',                                             'MinuteController@index')->name('index');
+            Route::get('/create',                                       'MinuteController@create')->name('create');
+            Route::post('/',                                            'MinuteController@store')->name('store');
+            Route::get('/{minute}/edit',                                'MinuteController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'MinuteController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{minute}',                                    'MinuteController@update')->name('update');
+            Route::delete('/{minute}',                                  'MinuteController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('user-academic-degrees')->name('user-academic-degrees/')->group(static function() {
+            Route::get('/',                                             'UserAcademicDegreeController@index')->name('index');
+            Route::get('/create',                                       'UserAcademicDegreeController@create')->name('create');
+            Route::post('/',                                            'UserAcademicDegreeController@store')->name('store');
+            Route::get('/{userAcademicDegree}/edit',                    'UserAcademicDegreeController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'UserAcademicDegreeController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{userAcademicDegree}',                        'UserAcademicDegreeController@update')->name('update');
+            Route::delete('/{userAcademicDegree}',                      'UserAcademicDegreeController@destroy')->name('destroy');
+        });
+    });
+});

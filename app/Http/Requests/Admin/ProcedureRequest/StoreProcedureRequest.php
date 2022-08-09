@@ -26,7 +26,7 @@ class StoreProcedureRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'no_request' => ['required', 'integer'],
+            'no_request' => ['required', Rule::unique('procedure_request', 'no_request'), 'integer'],
             'id_academic_degree' => ['required', 'integer'],
             'id_request_state' => ['required', 'integer'],
             'user_student' => ['required', 'integer'],

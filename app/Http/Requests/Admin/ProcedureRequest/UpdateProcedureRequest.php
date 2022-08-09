@@ -26,7 +26,7 @@ class UpdateProcedureRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'no_request' => ['sometimes', 'integer'],
+            'no_request' => ['sometimes', Rule::unique('procedure_request', 'no_request')->ignore($this->procedureRequest->getKey(), $this->procedureRequest->getKeyName()), 'integer'],
             'id_academic_degree' => ['sometimes', 'integer'],
             'id_request_state' => ['sometimes', 'integer'],
             'user_student' => ['sometimes', 'integer'],

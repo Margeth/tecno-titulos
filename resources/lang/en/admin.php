@@ -412,5 +412,58 @@ return [
         ],
     ],
 
+    'procedure-request' => [
+        'title' => 'Procedure Request',
+
+        'actions' => [
+            'index' => 'Procedure Request',
+            'create' => 'New Procedure Request',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'no_request' => 'No request',
+            'id_academic_degree' => 'Id academic degree',
+            'id_request_state' => 'Id request state',
+            'user_student' => 'User student',
+            'user_transcriber' => 'User transcriber',
+            
+        ],
+    ],
+
+    'minute' => [
+        'title' => 'Minute',
+
+        'actions' => [
+            'index' => 'Minute',
+            'create' => 'New Minute',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'no_request' => 'No request',
+            
+        ],
+    ],
+
+    'user-academic-degree' => [
+        'title' => 'User Academic Degree',
+
+        'actions' => [
+            'index' => 'User Academic Degree',
+            'create' => 'New User Academic Degree',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'no_request' => 'No request',
+            'code_academic_degree' => 'Code academic degree',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

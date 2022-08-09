@@ -12,3 +12,5 @@ import './requirement';
 import './academic-degree-requirement';
 import './admin-user';
 import './procedure-request';
+import './minute';
+import './user-academic-degree';

@@ -15,7 +15,7 @@ class CreateProcedureRequest extends Migration
     {
         Schema::create('procedure_request', function (Blueprint $table) {
             $table->id();
-            $table->integer('no_request');
+            $table->integer('no_request')->unique();
             $table->integer('id_academic_degree');
             $table->integer('id_request_state');
             $table->integer('user_student');

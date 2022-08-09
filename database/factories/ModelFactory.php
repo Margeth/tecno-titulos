@@ -257,3 +257,24 @@ $factory->define(App\Models\AcademicDegree::class, static function (Faker\Genera
         
     ];
 });
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Minute::class, static function (Faker\Generator $faker) {
+    return [
+        'no_request' => $faker->randomNumber(5),
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\UserAcademicDegree::class, static function (Faker\Generator $faker) {
+    return [
+        'no_request' => $faker->randomNumber(5),
+        'code_academic_degree' => $faker->sentence,
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});
