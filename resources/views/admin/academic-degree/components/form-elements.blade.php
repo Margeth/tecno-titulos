@@ -1,7 +1,7 @@
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('id_entity'), 'has-success': fields.id_entity && fields.id_entity.valid }">
     <label for="id_entity" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.academic-degree.columns.id_entity') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-        <input type="text" v-model="form.id_entity" v-validate="'required|integer'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('id_entity'), 'form-control-success': fields.id_entity && fields.id_entity.valid}" id="id_entity" name="id_entity" placeholder="{{ trans('admin.academic-degree.columns.id_entity') }}">
+        <input type="text" v-model="form.id_entity" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('id_entity'), 'form-control-success': fields.id_entity && fields.id_entity.valid}" id="id_entity" name="id_entity" placeholder="{{ trans('admin.academic-degree.columns.id_entity') }}">
         <div v-if="errors.has('id_entity')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('id_entity') }}</div>
     </div>
 </div>

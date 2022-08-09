@@ -15,10 +15,10 @@ class CreateAcademicDegree extends Migration
     {
         Schema::create('academic_degree', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_entity');
+            $table->string('id_entity');
             $table->integer('id_type');
             $table->string('name');
-            $table->foreign('id_entity')->references('id')->on('entity');
+            $table->foreign('id_entity')->references('code')->on('entity');
             $table->foreign('id_type')->references('id')->on('type_academic_degree');
         });
     }

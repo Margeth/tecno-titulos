@@ -34,6 +34,13 @@ class UpdateAdminUser extends FormRequest
             'password' => ['sometimes', 'confirmed', 'min:7', 'regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9]).*$/', 'string'],
             'forbidden' => ['sometimes', 'boolean'],
             'language' => ['sometimes', 'string'],
+            'ci' => ['nullable', 'integer'],
+            'code' => ['sometimes', Rule::unique('admin_users', 'code')->ignore($this->adminUser->getKey(), $this->adminUser->getKeyName()), 'string'],
+            'gender' => ['nullable', 'string'],
+            'date_of_birth' => ['nullable', 'date'],
+            'country' => ['nullable', 'string'],
+            'city' => ['nullable', 'string'],
+            'province' => ['nullable', 'string'],
                 
             'roles' => ['sometimes', 'array'],
                 

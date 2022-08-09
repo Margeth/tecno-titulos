@@ -137,3 +137,123 @@ $factory->define(App\Models\AcademicDegreeRequirement::class, static function (F
         
     ];
 });
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(Brackets\AdminAuth\Models\AdminUser::class, function (Faker\Generator $faker) {
+    return [
+        'first_name' => $faker->firstName,
+        'last_name' => $faker->lastName,
+        'ci' => $faker->randomNumber(5),
+        'code' => $faker->randomNumber(5),
+        'gender' => $faker->sentence,
+        'date_of_birth' => $faker->date(),
+        'country' => $faker->sentence,
+        'city' => $faker->sentence,
+        'province' => $faker->sentence,
+        'email' => $faker->email,
+        'password' => bcrypt($faker->password),
+        'remember_token' => null,
+        'activated' => true,
+        'forbidden' => $faker->boolean(),
+        'language' => 'en',
+        'deleted_at' => null,
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        'last_login_at' => $faker->dateTime,
+        
+    ];
+});/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(Brackets\AdminAuth\Models\AdminUser::class, function (Faker\Generator $faker) {
+    return [
+        'first_name' => $faker->firstName,
+        'last_name' => $faker->lastName,
+        'ci' => $faker->randomNumber(5),
+        'code' => $faker->sentence,
+        'gender' => $faker->sentence,
+        'date_of_birth' => $faker->date(),
+        'country' => $faker->sentence,
+        'city' => $faker->sentence,
+        'province' => $faker->sentence,
+        'email' => $faker->email,
+        'password' => bcrypt($faker->password),
+        'remember_token' => null,
+        'activated' => true,
+        'forbidden' => $faker->boolean(),
+        'language' => 'en',
+        'deleted_at' => null,
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        'last_login_at' => $faker->dateTime,
+        
+    ];
+});/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(Brackets\AdminAuth\Models\AdminUser::class, function (Faker\Generator $faker) {
+    return [
+        'first_name' => $faker->firstName,
+        'last_name' => $faker->lastName,
+        'email' => $faker->email,
+        'password' => bcrypt($faker->password),
+        'remember_token' => null,
+        'activated' => true,
+        'forbidden' => $faker->boolean(),
+        'language' => 'en',
+        'deleted_at' => null,
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        'ci' => $faker->randomNumber(5),
+        'code' => $faker->sentence,
+        'gender' => $faker->sentence,
+        'date_of_birth' => $faker->date(),
+        'country' => $faker->sentence,
+        'city' => $faker->sentence,
+        'province' => $faker->sentence,
+        'last_login_at' => $faker->dateTime,
+        
+    ];
+});/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(Brackets\AdminAuth\Models\AdminUser::class, function (Faker\Generator $faker) {
+    return [
+        'first_name' => $faker->firstName,
+        'last_name' => $faker->lastName,
+        'email' => $faker->email,
+        'password' => bcrypt($faker->password),
+        'remember_token' => null,
+        'activated' => true,
+        'forbidden' => $faker->boolean(),
+        'language' => 'en',
+        'deleted_at' => null,
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        'ci' => $faker->randomNumber(5),
+        'code' => $faker->sentence,
+        'gender' => $faker->sentence,
+        'date_of_birth' => $faker->date(),
+        'country' => $faker->sentence,
+        'city' => $faker->sentence,
+        'province' => $faker->sentence,
+        'last_login_at' => $faker->dateTime,
+        
+    ];
+});/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\ProcedureRequest::class, static function (Faker\Generator $faker) {
+    return [
+        'no_request' => $faker->randomNumber(5),
+        'id_academic_degree' => $faker->randomNumber(5),
+        'id_request_state' => $faker->randomNumber(5),
+        'user_student' => $faker->randomNumber(5),
+        'user_transcriber' => $faker->randomNumber(5),
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\AcademicDegree::class, static function (Faker\Generator $faker) {
+    return [
+        'id_entity' => $faker->sentence,
+        'id_type' => $faker->randomNumber(5),
+        'name' => $faker->firstName,
+        
+        
+    ];
+});

@@ -22,14 +22,22 @@ class CreateAdminUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
 
-            $table->boolean('activated')->default(false);
+            $table->boolean('activated')->default(true);
             $table->boolean('forbidden')->default(false);
             $table->string('language', 2)->default('en');
 
             $table->softDeletes();
             $table->timestamps();
 
-            $table->unique(['email', 'deleted_at']);
+            $table->integer('ci')->nullable();
+            $table->bigInteger('code')->unique();
+            $table->string('gender')->nullable();
+            $table->date('date_of_birth')->nullable();
+            $table->string('country')->nullable();
+            $table->string('city')->nullable();
+            $table->string('province')->nullable();
+
+            $table->unique(['email', 'deleted_at', 'code']);
         });
 
         $connection = config('database.default');

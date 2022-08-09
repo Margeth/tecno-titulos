@@ -26,7 +26,7 @@ class StoreAcademicDegree extends FormRequest
     public function rules(): array
     {
         return [
-            'id_entity' => ['required', 'integer'],
+            'id_entity' => ['required', 'string'],
             'id_type' => ['required', 'integer'],
             'name' => ['required', 'string'],
             

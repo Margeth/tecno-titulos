@@ -230,5 +230,187 @@ return [
         ],
     ],
 
+    'admin-user' => [
+        'title' => 'Users',
+
+        'actions' => [
+            'index' => 'Users',
+            'create' => 'New User',
+            'edit' => 'Edit :name',
+            'edit_profile' => 'Edit Profile',
+            'edit_password' => 'Edit Password',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'last_login_at' => 'Last login',
+            'first_name' => 'First name',
+            'last_name' => 'Last name',
+            'ci' => 'Ci',
+            'code' => 'Code',
+            'gender' => 'Gender',
+            'date_of_birth' => 'Date of birth',
+            'country' => 'Country',
+            'city' => 'City',
+            'province' => 'Province',
+            'email' => 'Email',
+            'password' => 'Password',
+            'password_repeat' => 'Password Confirmation',
+            'activated' => 'Activated',
+            'forbidden' => 'Forbidden',
+            'language' => 'Language',
+                
+            //Belongs to many relations
+            'roles' => 'Roles',
+                
+        ],
+    ],
+
+    'admin-user' => [
+        'title' => 'Users',
+
+        'actions' => [
+            'index' => 'Users',
+            'create' => 'New User',
+            'edit' => 'Edit :name',
+            'edit_profile' => 'Edit Profile',
+            'edit_password' => 'Edit Password',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'last_login_at' => 'Last login',
+            'first_name' => 'First name',
+            'last_name' => 'Last name',
+            'email' => 'Email',
+            'password' => 'Password',
+            'password_repeat' => 'Password Confirmation',
+            'activated' => 'Activated',
+            'forbidden' => 'Forbidden',
+            'language' => 'Language',
+            'ci' => 'Ci',
+            'code' => 'Code',
+            'gender' => 'Gender',
+            'date_of_birth' => 'Date of birth',
+            'country' => 'Country',
+            'city' => 'City',
+            'province' => 'Province',
+                
+            //Belongs to many relations
+            'roles' => 'Roles',
+                
+        ],
+    ],
+
+    'admin-user' => [
+        'title' => 'Users',
+
+        'actions' => [
+            'index' => 'Users',
+            'create' => 'New User',
+            'edit' => 'Edit :name',
+            'edit_profile' => 'Edit Profile',
+            'edit_password' => 'Edit Password',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'last_login_at' => 'Last login',
+            'first_name' => 'First name',
+            'last_name' => 'Last name',
+            'email' => 'Email',
+            'password' => 'Password',
+            'password_repeat' => 'Password Confirmation',
+            'activated' => 'Activated',
+            'forbidden' => 'Forbidden',
+            'language' => 'Language',
+            'ci' => 'Ci',
+            'code' => 'Code',
+            'gender' => 'Gender',
+            'date_of_birth' => 'Date of birth',
+            'country' => 'Country',
+            'city' => 'City',
+            'province' => 'Province',
+                
+            //Belongs to many relations
+            'roles' => 'Roles',
+                
+        ],
+    ],
+
+    'procedure-request' => [
+        'title' => 'Procedure Request',
+
+        'actions' => [
+            'index' => 'Procedure Request',
+            'create' => 'New Procedure Request',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'no_request' => 'No request',
+            'id_academic_degree' => 'Id academic degree',
+            'id_request_state' => 'Id request state',
+            'user_student' => 'User student',
+            'user_transcriber' => 'User transcriber',
+            
+        ],
+    ],
+
+    'academic-degree' => [
+        'title' => 'Academic Degree',
+
+        'actions' => [
+            'index' => 'Academic Degree',
+            'create' => 'New Academic Degree',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'id_entity' => 'Id entity',
+            'id_type' => 'Id type',
+            'name' => 'Name',
+            
+        ],
+    ],
+
+    'admin-user' => [
+        'title' => 'Users',
+
+        'actions' => [
+            'index' => 'Users',
+            'create' => 'New User',
+            'edit' => 'Edit :name',
+            'edit_profile' => 'Edit Profile',
+            'edit_password' => 'Edit Password',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'last_login_at' => 'Last login',
+            'first_name' => 'First name',
+            'last_name' => 'Last name',
+            'email' => 'Email',
+            'password' => 'Password',
+            'password_repeat' => 'Password Confirmation',
+            'activated' => 'Activated',
+            'forbidden' => 'Forbidden',
+            'language' => 'Language',
+            'ci' => 'Ci',
+            'code' => 'Code',
+            'gender' => 'Gender',
+            'date_of_birth' => 'Date of birth',
+            'country' => 'Country',
+            'city' => 'City',
+            'province' => 'Province',
+                
+            //Belongs to many relations
+            'roles' => 'Roles',
+                
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

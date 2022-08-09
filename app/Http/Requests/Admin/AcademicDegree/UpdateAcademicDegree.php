@@ -26,7 +26,7 @@ class UpdateAcademicDegree extends FormRequest
     public function rules(): array
     {
         return [
-            'id_entity' => ['sometimes', 'integer'],
+            'id_entity' => ['sometimes', 'string'],
             'id_type' => ['sometimes', 'integer'],
             'name' => ['sometimes', 'string'],
             

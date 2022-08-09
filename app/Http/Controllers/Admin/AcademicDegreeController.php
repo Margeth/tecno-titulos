@@ -40,7 +40,7 @@ class AcademicDegreeController extends Controller
             ['id', 'id_entity', 'id_type', 'name'],
 
             // set columns to searchIn
-            ['id', 'name']
+            ['id', 'id_entity', 'name']
         );
 
         if ($request->ajax()) {

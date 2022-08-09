@@ -37,7 +37,7 @@ class EntityController extends Controller
             $request,
 
             // set columns to query
-            ['id', 'code', 'name'],
+            ['code', 'name'],
 
             // set columns to searchIn
             ['id', 'code', 'name']

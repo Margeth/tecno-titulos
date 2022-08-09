@@ -179,3 +179,65 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
         });
     });
 });
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('admin-users')->name('admin-users/')->group(static function() {
+            Route::get('/',                                             'AdminUsersController@index')->name('index');
+            Route::get('/create',                                       'AdminUsersController@create')->name('create');
+            Route::post('/',                                            'AdminUsersController@store')->name('store');
+            Route::get('/{adminUser}/impersonal-login',                 'AdminUsersController@impersonalLogin')->name('impersonal-login');
+            Route::get('/{adminUser}/edit',                             'AdminUsersController@edit')->name('edit');
+            Route::post('/{adminUser}',                                 'AdminUsersController@update')->name('update');
+            Route::delete('/{adminUser}',                               'AdminUsersController@destroy')->name('destroy');
+            Route::get('/{adminUser}/resend-activation',                'AdminUsersController@resendActivationEmail')->name('resendActivationEmail');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('admin-users')->name('admin-users/')->group(static function() {
+            Route::get('/',                                             'AdminUsersController@index')->name('index');
+            Route::get('/create',                                       'AdminUsersController@create')->name('create');
+            Route::post('/',                                            'AdminUsersController@store')->name('store');
+            Route::get('/{adminUser}/impersonal-login',                 'AdminUsersController@impersonalLogin')->name('impersonal-login');
+            Route::get('/{adminUser}/edit',                             'AdminUsersController@edit')->name('edit');
+            Route::post('/{adminUser}',                                 'AdminUsersController@update')->name('update');
+            Route::delete('/{adminUser}',                               'AdminUsersController@destroy')->name('destroy');
+            Route::get('/{adminUser}/resend-activation',                'AdminUsersController@resendActivationEmail')->name('resendActivationEmail');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('procedure-requests')->name('procedure-requests/')->group(static function() {
+            Route::get('/',                                             'ProcedureRequestController@index')->name('index');
+            Route::get('/create',                                       'ProcedureRequestController@create')->name('create');
+            Route::post('/',                                            'ProcedureRequestController@store')->name('store');
+            Route::get('/{procedureRequest}/edit',                      'ProcedureRequestController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'ProcedureRequestController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{procedureRequest}',                          'ProcedureRequestController@update')->name('update');
+            Route::delete('/{procedureRequest}',                        'ProcedureRequestController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('academic-degrees')->name('academic-degrees/')->group(static function() {
+            Route::get('/',                                             'AcademicDegreeController@index')->name('index');
+            Route::get('/create',                                       'AcademicDegreeController@create')->name('create');
+            Route::post('/',                                            'AcademicDegreeController@store')->name('store');
+            Route::get('/{academicDegree}/edit',                        'AcademicDegreeController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'AcademicDegreeController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{academicDegree}',                            'AcademicDegreeController@update')->name('update');
+            Route::delete('/{academicDegree}',                          'AcademicDegreeController@destroy')->name('destroy');
+        });
+    });
+});

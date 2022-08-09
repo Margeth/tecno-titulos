@@ -12,6 +12,13 @@ Vue.component('admin-user-form', {
                 activated:  false ,
                 forbidden:  false ,
                 language:  '' ,
+                ci:  '' ,
+                code:  '' ,
+                gender:  '' ,
+                date_of_birth:  '' ,
+                country:  '' ,
+                city:  '' ,
+                province:  '' ,
                 
             }
         }

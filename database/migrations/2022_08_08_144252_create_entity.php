@@ -15,7 +15,7 @@ class CreateEntity extends Migration
     {
         Schema::create('entity', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
+            $table->string('code')->unique();
             $table->string('name');
         });
     }
