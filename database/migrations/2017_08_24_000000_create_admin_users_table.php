@@ -47,6 +47,8 @@ class CreateAdminUsersTable extends Migration
                 DB::statement('CREATE UNIQUE INDEX admin_users_email_null_deleted_at ON admin_users (email) WHERE deleted_at IS NULL;');
             });
         }
+
+
     }
 
     /**

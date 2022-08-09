@@ -465,5 +465,25 @@ return [
         ],
     ],
 
+    'signer' => [
+        'title' => 'Signer',
+
+        'actions' => [
+            'index' => 'Signer',
+            'create' => 'New Signer',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'id_minute' => 'Id minute',
+            'code_user_academic_degre' => 'Code user academic degre',
+            'code' => 'Code',
+            'id_step' => 'Id step',
+            'is_signed' => 'Is signed',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

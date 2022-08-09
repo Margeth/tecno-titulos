@@ -125,6 +125,7 @@ class FillDefaultAdminUserAndPermissions extends Migration
                     //
                 ],
             ],
+
         ];
     }
 

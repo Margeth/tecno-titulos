@@ -278,3 +278,17 @@ $factory->define(App\Models\UserAcademicDegree::class, static function (Faker\Ge
         
     ];
 });
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Signer::class, static function (Faker\Generator $faker) {
+    return [
+        'id_minute' => $faker->randomNumber(5),
+        'code_user_academic_degre' => $faker->sentence,
+        'code' => $faker->sentence,
+        'id_step' => $faker->randomNumber(5),
+        'is_signed' => $faker->boolean(),
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});

@@ -14,3 +14,4 @@ import './admin-user';
 import './procedure-request';
 import './minute';
 import './user-academic-degree';
+import './signer';
