@@ -24,6 +24,7 @@
 
 
 
+           <li class="nav-item"><a class="nav-link" href="{{ url('admin/stats') }}"><i class="nav-icon icon-diamond"></i> {{ trans('admin.stat.title') }}</a></li>
            {{-- Do not delete me :) I'm used for auto-generation menu items --}}
 
             <li class="nav-title">SETTING</li>

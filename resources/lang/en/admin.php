@@ -485,5 +485,22 @@ return [
         ],
     ],
 
+    'stat' => [
+        'title' => 'Stats',
+
+        'actions' => [
+            'index' => 'Stats',
+            'create' => 'New Stat',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'page_name' => 'Page name',
+            'count' => 'Count',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

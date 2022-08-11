@@ -292,3 +292,12 @@ $factory->define(App\Models\Signer::class, static function (Faker\Generator $fak
         
     ];
 });
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Stat::class, static function (Faker\Generator $faker) {
+    return [
+        'page_name' => $faker->sentence,
+        'count' => $faker->randomNumber(5),
+        
+        
+    ];
+});

@@ -1,7 +1,6 @@
 import './admin-user';
 import './profile-edit-profile';
 import './profile-edit-password';
-import './post';
 import './role';
 import './permission';
 import './role-has-permission';
@@ -15,3 +14,4 @@ import './procedure-request';
 import './minute';
 import './user-academic-degree';
 import './signer';
+import './stat';
