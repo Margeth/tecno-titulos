@@ -59,6 +59,11 @@ class FillPermissionsForAcademicDegree extends Migration
                 'guard_name' => $this->guardName,
                 'permissions' => $permissions,
             ],
+            [
+                'name' => 'Director del departamento',
+                'guard_name' => $this->guardName,
+                'permissions' => $permissions,
+            ],
         ];
     }
 

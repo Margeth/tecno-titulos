@@ -48,17 +48,11 @@
                                     <th is='sortable' :column="'last_name'">{{ trans('admin.admin-user.columns.last_name') }}</th>
                                     <th is='sortable' :column="'email'">{{ trans('admin.admin-user.columns.email') }}</th>
                                     <th is='sortable' :column="'activated'" v-if="activation">{{ trans('admin.admin-user.columns.activated') }}</th>
-                                    <th is='sortable' :column="'forbidden'">{{ trans('admin.admin-user.columns.forbidden') }}</th>
-                                    <th is='sortable' :column="'language'">{{ trans('admin.admin-user.columns.language') }}</th>
-                                    <th is='sortable' :column="'ci'">{{ trans('admin.admin-user.columns.ci') }}</th>
+
                                     <th is='sortable' :column="'code'">{{ trans('admin.admin-user.columns.code') }}</th>
-                                    <th is='sortable' :column="'gender'">{{ trans('admin.admin-user.columns.gender') }}</th>
-                                    <th is='sortable' :column="'date_of_birth'">{{ trans('admin.admin-user.columns.date_of_birth') }}</th>
-                                    <th is='sortable' :column="'country'">{{ trans('admin.admin-user.columns.country') }}</th>
-                                    <th is='sortable' :column="'city'">{{ trans('admin.admin-user.columns.city') }}</th>
-                                    <th is='sortable' :column="'province'">{{ trans('admin.admin-user.columns.province') }}</th>
+
                                     <th is='sortable' :column="'last_login_at'">{{ trans('admin.admin-user.columns.last_login_at') }}</th>
-                                    
+
                                     <th></th>
                                 </tr>
                             </thead>
@@ -74,22 +68,10 @@
                                             <span class="switch-slider"></span>
                                         </label>
                                     </td>
-                                    <td >
-                                        <label class="switch switch-3d switch-danger">
-                                            <input type="checkbox" class="switch-input" v-model="collection[index].forbidden" @change="toggleSwitch(item.resource_url, 'forbidden', collection[index])">
-                                            <span class="switch-slider"></span>
-                                        </label>
-                                    </td>
-                                    <td >@{{ item.language }}</td>
-                                    <td >@{{ item.ci }}</td>
+
                                     <td >@{{ item.code }}</td>
-                                    <td >@{{ item.gender }}</td>
-                                    <td >@{{ item.date_of_birth | date }}</td>
-                                    <td >@{{ item.country }}</td>
-                                    <td >@{{ item.city }}</td>
-                                    <td >@{{ item.province }}</td>
                                     <td >@{{ item.last_login_at | datetime }}</td>
-                                    
+
                                     <td>
                                         <div class="row no-gutters">
                                             @can('admin.admin-user.impersonal-login')
@@ -132,5 +114,13 @@
             </div>
         </div>
     </admin-user-listing>
-
+    <?php
+    session_start();
+    if (isset($_SESSION['quantity'])) {
+        $_SESSION['quantity'] = $_SESSION['quantity'] + 1;
+    } else {
+        $_SESSION['quantity'] = 1;
+    }
+    $x = $_SESSION['quantity'];
+    ?>
 @endsection

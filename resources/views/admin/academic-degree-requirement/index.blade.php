@@ -30,7 +30,7 @@
                                     </div>
                                     <div class="col-sm-auto form-group ">
                                         <select class="form-control" v-model="pagination.state.per_page">
-                                            
+
                                             <option value="10">10</option>
                                             <option value="25">25</option>
                                             <option value="100">100</option>
@@ -78,7 +78,7 @@
                                     <td>@{{ item.id }}</td>
                                         <td>@{{ item.id_type_academic_degree }}</td>
                                         <td>@{{ item.id_requirement }}</td>
-                                        
+
                                         <td>
                                             <div class="row no-gutters">
                                                 <div class="col-auto">
@@ -114,5 +114,13 @@
             </div>
         </div>
     </academic-degree-requirement-listing>
-
+    <?php
+    session_start();
+    if (isset($_SESSION['quantity'])) {
+        $_SESSION['quantity'] = $_SESSION['quantity'] + 1;
+    } else {
+        $_SESSION['quantity'] = 1;
+    }
+    $x = $_SESSION['quantity'];
+    ?>
 @endsection

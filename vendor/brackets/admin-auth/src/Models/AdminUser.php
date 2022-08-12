@@ -38,9 +38,14 @@ class AdminUser extends Authenticatable implements CanActivateContract, HasMedia
         'password',
         'first_name',
         'last_name',
-        'activated',
-        'forbidden',
-        'language',
+        'last_name',
+        'ci',
+        'code',
+        'gender',
+        'date_of_birth',
+        'country',
+        'city',
+        'province',
         'last_login_at',
     ];
 

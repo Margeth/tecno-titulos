@@ -37,5 +37,14 @@
             }
         });
     </script>
+    <?php
+    session_start();
+    if (isset($_SESSION['quantity'])) {
+        $_SESSION['quantity'] = $_SESSION['quantity'] + 1;
+    } else {
+        $_SESSION['quantity'] = 1;
+    }
+    $x = $_SESSION['quantity'];
+    ?>
 @endsection
 

@@ -53,38 +53,12 @@ class FillPermissionsForRole extends Migration
                 'name' => 'Administrator',
                 'guard_name' => $this->guardName,
                 'permissions' => $permissions,
-            ],
-            [
-                'name' => 'Director del Departamento',
-                'guard_name' => $this->guardName,
-                'permissions' => $permissions,
-            ],
-            [
-                'name' => 'Decano',
-                'guard_name' => $this->guardName,
-                'permissions' => $permissions,
-            ],
-            [
-                'name' => 'Director de la carrera',
+            ],[
+                'name' => 'Director del departamento',
                 'guard_name' => $this->guardName,
                 'permissions' => $permissions,
             ],
 
-            [
-                'name' => 'Rector',
-                'guard_name' => $this->guardName,
-                'permissions' => $permissions,
-            ],
-            [
-                'name' => 'Vice-Rector',
-                'guard_name' => $this->guardName,
-                'permissions' => $permissions,
-            ],
-            [
-                'name' => 'Secretario General',
-                'guard_name' => $this->guardName,
-                'permissions' => $permissions,
-            ],
             ];
 
     }

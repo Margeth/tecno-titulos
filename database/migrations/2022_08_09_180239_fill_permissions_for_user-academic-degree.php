@@ -54,6 +54,11 @@ class FillPermissionsForUserAcademicDegree extends Migration
                 'guard_name' => $this->guardName,
                 'permissions' => $permissions,
             ],
+            [
+                'name' => 'Transcriptor',
+                'guard_name' => $this->guardName,
+                'permissions' => $permissions,
+            ],
         ];
     }
 
@@ -128,7 +133,7 @@ class FillPermissionsForUserAcademicDegree extends Migration
             'model_has_roles' => 'model_has_roles',
             'role_has_permissions' => 'role_has_permissions',
         ]);
-        
+
         DB::transaction(function () use ($tableNames){
             foreach ($this->permissions as $permission) {
                 $permissionItem = DB::table($tableNames['permissions'])->where([
