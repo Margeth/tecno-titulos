@@ -40,7 +40,7 @@ class ProcedureRequestController extends Controller
             ['id', 'no_request', 'id_academic_degree', 'id_request_state', 'user_student', 'user_transcriber'],
 
             // set columns to searchIn
-            ['id']
+            ['id', 'no_request', 'id_academic_degree', 'id_request_state', 'user_student', 'user_transcriber']
         );
 
         if ($request->ajax()) {

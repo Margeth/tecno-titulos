@@ -40,7 +40,7 @@ class MinuteController extends Controller
             ['id', 'no_request'],
 
             // set columns to searchIn
-            ['id']
+            ['id', 'no_request']
         );
 
         if ($request->ajax()) {

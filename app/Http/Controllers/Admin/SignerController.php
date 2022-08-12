@@ -40,7 +40,7 @@ class SignerController extends Controller
             ['id', 'id_minute', 'code_user_academic_degre', 'code', 'id_step', 'is_signed'],
 
             // set columns to searchIn
-            ['id', 'code_user_academic_degre']
+            ['id', 'id_minute', 'code_user_academic_degre', 'code', 'id_step', 'is_signed']
         );
 
         if ($request->ajax()) {
