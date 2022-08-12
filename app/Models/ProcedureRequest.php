@@ -14,16 +14,16 @@ class ProcedureRequest extends Model
         'id_request_state',
         'user_student',
         'user_transcriber',
-    
+
     ];
-    
-    
+
+
     protected $dates = [
         'created_at',
         'updated_at',
-    
+
     ];
-    
+
     protected $appends = ['resource_url'];
 
     /* ************************ ACCESSOR ************************* */
@@ -31,5 +31,11 @@ class ProcedureRequest extends Model
     public function getResourceUrlAttribute()
     {
         return url('/admin/procedure-requests/'.$this->getKey());
+    }
+
+    public function datasStatistic(){
+        return $datasStatics = ProcedureRequest::join('request_state','request_state.id', '=',  'id_request_state')
+            ->groupBy('request_state.name')
+            ->get(['request_state.name', 'count(*) as quantity']);
     }
 }

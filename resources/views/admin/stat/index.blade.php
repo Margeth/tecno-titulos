@@ -21,7 +21,7 @@
                 labels: {!! json_encode($chart->labels)!!},
                 datasets: [
                     {
-                        label: 'Visitas',
+                        label: 'Estadisticas',
                         backgroundColor: {!! json_encode($chart->colours)!!} ,
                         data:  {!! json_encode($chart->dataset)!!} ,
                     },
