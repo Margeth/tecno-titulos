@@ -301,3 +301,10 @@ $factory->define(App\Models\Stat::class, static function (Faker\Generator $faker
         
     ];
 });
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Stat::class, static function (Faker\Generator $faker) {
+    return [
+        
+        
+    ];
+});

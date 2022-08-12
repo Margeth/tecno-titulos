@@ -287,3 +287,33 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
         });
     });
 });
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('stats')->name('stats/')->group(static function() {
+            Route::get('/',                                             'StatController@index')->name('index');
+            Route::get('/create',                                       'StatController@create')->name('create');
+            Route::post('/',                                            'StatController@store')->name('store');
+            Route::get('/{stat}/edit',                                  'StatController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'StatController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{stat}',                                      'StatController@update')->name('update');
+            Route::delete('/{stat}',                                    'StatController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('stats')->name('stats/')->group(static function() {
+            Route::get('/',                                             'StatsController@index')->name('index');
+            Route::get('/create',                                       'StatsController@create')->name('create');
+            Route::post('/',                                            'StatsController@store')->name('store');
+            Route::get('/{stat}/edit',                                  'StatsController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'StatsController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{stat}',                                      'StatsController@update')->name('update');
+            Route::delete('/{stat}',                                    'StatsController@destroy')->name('destroy');
+        });
+    });
+});
