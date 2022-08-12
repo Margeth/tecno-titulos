@@ -100,8 +100,81 @@ class FillDefaultAdminUserAndPermissions extends Migration
                     return $permission === 'admin.admin-user.impersonal-login';
                 }),
             ],
+            [
+                'name' => 'Director del departamento',
+                'guard_name' => $this->guardName,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'permissions' => $defaultPermissions->reject(function ($permission) {
+                    return $permission === 'admin.admin-user.impersonal-login';
+                }),
+            ],
+            [
+                'name' => 'Decano',
+                'guard_name' => $this->guardName,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'permissions' => $defaultPermissions->reject(function ($permission) {
+                    return $permission === 'admin.admin-user.impersonal-login';
+                }),
+            ],
+            [
+                'name' => 'Director de carrera',
+                'guard_name' => $this->guardName,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'permissions' => $defaultPermissions->reject(function ($permission) {
+                    return $permission === 'admin.admin-user.impersonal-login';
+                }),
+            ],
+            [
+                'name' => 'Rector',
+                'guard_name' => $this->guardName,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'permissions' => $defaultPermissions->reject(function ($permission) {
+                    return $permission === 'admin.admin-user.impersonal-login';
+                }),
+            ],
+            [
+                'name' => 'Vicerector',
+                'guard_name' => $this->guardName,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'permissions' => $defaultPermissions->reject(function ($permission) {
+                    return $permission === 'admin.admin-user.impersonal-login';
+                }),
+            ],
+            [
+                'name' => 'Secretario general',
+                'guard_name' => $this->guardName,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'permissions' => $defaultPermissions->reject(function ($permission) {
+                    return $permission === 'admin.admin-user.impersonal-login';
+                }),
+            ],
+            [
+                'name' => 'Transcriptor',
+                'guard_name' => $this->guardName,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'permissions' => $defaultPermissions->reject(function ($permission) {
+                    return $permission === 'admin.admin-user.impersonal-login';
+                }),
+            ],
+            [
+                'name' => 'Estudiante',
+                'guard_name' => $this->guardName,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'permissions' => $defaultPermissions->reject(function ($permission) {
+                    return $permission === 'admin.admin-user.impersonal-login';
+                }),
+            ],
 
-        ];
+        ];//
+
 
         //Add new users
         $this->users = [
@@ -118,6 +191,346 @@ class FillDefaultAdminUserAndPermissions extends Migration
                 'roles' => [
                     [
                         'name' => 'Administrator',
+                        'guard_name' => $this->guardName,
+                    ],
+                ],
+                'permissions' => [
+                    //
+                ],
+            ],
+            [
+                'first_name' => 'Any',
+                'last_name' => 'Atila',
+                'email' => 'atila@gmail.com',
+                'code' => '200014',
+                'password' => Hash::make('admin.123'),
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'activated' => true,
+                'roles' => [
+                    [
+                        'name' => 'Director del departamento',
+                        'guard_name' => $this->guardName,
+                    ],
+                ],
+                'permissions' => [
+                    //
+                ],
+            ],
+            [
+                'first_name' => 'Evans',
+                'last_name' => 'Balcazar',
+                'email' => 'evans@gmail.com',
+                'code' => '200015',
+                'password' => Hash::make('admin.123'),
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'activated' => true,
+                'roles' => [
+                    [
+                        'name' => 'Decano',
+                        'guard_name' => $this->guardName,
+                    ],
+                ],
+                'permissions' => [
+                    //
+                ],
+            ],
+            [
+                'first_name' => 'Juan',
+                'last_name' => 'Dominguez',
+                'email' => 'juan@gmail.com',
+                'code' => '200016',
+                'password' => Hash::make('admin.123'),
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'activated' => true,
+                'roles' => [
+                    [
+                        'name' => 'Decano',
+                        'guard_name' => $this->guardName,
+                    ],
+                ],
+                'permissions' => [
+                    //
+                ],
+            ],
+            [
+                'first_name' => 'Franklin',
+                'last_name' => 'Caceres',
+                'email' => 'franklin@gmail.com',
+                'code' => '200017',
+                'password' => Hash::make('admin.123'),
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'activated' => true,
+                'roles' => [
+                    [
+                        'name' => 'Director de carrera',
+                        'guard_name' => $this->guardName,
+                    ],
+                ],
+                'permissions' => [
+                    //
+                ],
+            ],
+            [
+                'first_name' => 'Shirley',
+                'last_name' => 'Perez',
+                'email' => 'shirley@gmail.com',
+                'code' => '200018',
+                'password' => Hash::make('admin.123'),
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'activated' => true,
+                'roles' => [
+                    [
+                        'name' => 'Director de carrera',
+                        'guard_name' => $this->guardName,
+                    ],
+                ],
+                'permissions' => [
+                    //
+                ],
+            ],
+            [
+                'first_name' => 'Mauricio',
+                'last_name' => 'Perez',
+                'email' => 'mauricio@gmail.com',
+                'code' => '200019',
+                'password' => Hash::make('admin.123'),
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'activated' => true,
+                'roles' => [
+                    [
+                        'name' => 'Director de carrera',
+                        'guard_name' => $this->guardName,
+                    ],
+                ],
+                'permissions' => [
+                    //
+                ],
+            ],
+            [
+                'first_name' => 'Vicente',
+                'last_name' => 'Cuella',
+                'email' => 'vicente@gmail.com',
+                'code' => '200020',
+                'password' => Hash::make('admin.123'),
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'activated' => true,
+                'roles' => [
+                    [
+                        'name' => 'Rector',
+                        'guard_name' => $this->guardName,
+                    ],
+                ],
+                'permissions' => [
+                    //
+                ],
+            ],
+            [
+                'first_name' => 'Eddy',
+                'last_name' => 'Bustamante',
+                'email' => 'eddy@gmail.com',
+                'code' => '200021',
+                'password' => Hash::make('admin.123'),
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'activated' => true,
+                'roles' => [
+                    [
+                        'name' => 'Secretario general',
+                        'guard_name' => $this->guardName,
+                    ],
+                ],
+                'permissions' => [
+                    //
+                ],
+            ],
+            [
+                'first_name' => 'Adalid',
+                'last_name' => 'Perez',
+                'email' => 'adalid@gmail.com',
+                'code' => '200022',
+                'password' => Hash::make('admin.123'),
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'activated' => true,
+                'roles' => [
+                    [
+                        'name' => 'Vicerector',
+                        'guard_name' => $this->guardName,
+                    ],
+                ],
+                'permissions' => [
+                    //
+                ],
+            ],
+            [
+                'first_name' => 'Pablo',
+                'last_name' => 'Peña',
+                'email' => 'pablod@gmail.com',
+                'code' => '2000147',
+                'password' => Hash::make('admin.123'),
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'activated' => true,
+                'roles' => [
+                    [
+                        'name' => 'Transcriptor',
+                        'guard_name' => $this->guardName,
+                    ],
+                ],
+                'permissions' => [
+                    //
+                ],
+            ],
+            [
+                'first_name' => 'Ana',
+                'last_name' => 'Espada',
+                'email' => 'ana@gmail.com',
+                'code' => '215454216',
+                'password' => Hash::make('admin.123'),
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'activated' => true,
+                'roles' => [
+                    [
+                        'name' => 'Estudiante',
+                        'guard_name' => $this->guardName,
+                    ],
+                ],
+                'permissions' => [
+                    //
+                ],
+            ],
+            [
+                'first_name' => 'Luis',
+                'last_name' => 'Mamani',
+                'email' => 'luis@gmail.com',
+                'code' => '216521302',
+                'password' => Hash::make('admin.123'),
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'activated' => true,
+                'roles' => [
+                    [
+                        'name' => 'Estudiante',
+                        'guard_name' => $this->guardName,
+                    ],
+                ],
+                'permissions' => [
+                    //
+                ],
+            ],
+            [
+                'first_name' => 'Marce',
+                'last_name' => 'Quispe',
+                'email' => 'marce@gmail.com',
+                'code' => '215487652',
+                'password' => Hash::make('admin.123'),
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'activated' => true,
+                'roles' => [
+                    [
+                        'name' => 'Estudiante',
+                        'guard_name' => $this->guardName,
+                    ],
+                ],
+                'permissions' => [
+                    //
+                ],
+            ],
+            [
+                'first_name' => 'Marcos',
+                'last_name' => 'Mancilla',
+                'email' => 'marcos@gmail.com',
+                'code' => '201458751',
+                'password' => Hash::make('admin.123'),
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'activated' => true,
+                'roles' => [
+                    [
+                        'name' => 'Estudiante',
+                        'guard_name' => $this->guardName,
+                    ],
+                ],
+                'permissions' => [
+                    //
+                ],
+            ],
+            [
+                'first_name' => 'Maria',
+                'last_name' => 'Rengipo',
+                'email' => 'maria@gmail.com',
+                'code' => '213554871',
+                'password' => Hash::make('admin.123'),
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'activated' => true,
+                'roles' => [
+                    [
+                        'name' => 'Estudiante',
+                        'guard_name' => $this->guardName,
+                    ],
+                ],
+                'permissions' => [
+                    //
+                ],
+            ],
+            [
+                'first_name' => 'Luisa',
+                'last_name' => 'Chambi',
+                'email' => 'luisa@gmail.com',
+                'code' => '215084874',
+                'password' => Hash::make('admin.123'),
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'activated' => true,
+                'roles' => [
+                    [
+                        'name' => 'Estudiante',
+                        'guard_name' => $this->guardName,
+                    ],
+                ],
+                'permissions' => [
+                    //
+                ],
+            ],
+            [
+                'first_name' => 'Elizabet',
+                'last_name' => 'Ruiz',
+                'email' => 'eli@gmail.com',
+                'code' => '205184781',
+                'password' => Hash::make('admin.123'),
+                'remember_token' => null,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'activated' => true,
+                'roles' => [
+                    [
+                        'name' => 'Estudiante',
                         'guard_name' => $this->guardName,
                     ],
                 ],

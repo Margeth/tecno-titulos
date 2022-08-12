@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateSigner extends Migration
 {
@@ -28,6 +29,15 @@ class CreateSigner extends Migration
             $table->foreign('id_step')->references('id')->on('step_signer');
 
         });
+        DB::table('signer')->insert([
+            ['id_minute' => 1,'code_user_academic_degre' => '1125-5104-4120','code' => 200014,'id_step' => 1,'is_signed' => True],
+            ['id_minute' => 1,'code_user_academic_degre' => '1125-5104-4120','code' => 200015,'id_step' => 1,'is_signed' => True],
+            ['id_minute' => 2,'code_user_academic_degre' => '1125-5104-4121','code' => 200014,'id_step' => 1,'is_signed' => True],
+            ['id_minute' => 2,'code_user_academic_degre' => '1125-5104-4121','code' => 200015,'id_step' => 1,'is_signed' => True],
+            ['id_minute' => 2,'code_user_academic_degre' => '1125-5104-4121','code' => 200014,'id_step' => 1,'is_signed' => True],
+            ['id_minute' => 3,'code_user_academic_degre' => '1125-5104-4122','code' => 200014,'id_step' => 1,'is_signed' => True],
+            ['id_minute' => 3,'code_user_academic_degre' => '1125-5104-4122','code' => 200016,'id_step' => 1,'is_signed' => True],
+        ]);
     }
 
     /**
