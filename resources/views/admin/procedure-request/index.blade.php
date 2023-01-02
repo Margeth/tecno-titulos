@@ -50,11 +50,11 @@
                                         </th>
 
                                         <th is='sortable' :column="'id'">{{ trans('admin.procedure-request.columns.id') }}</th>
-                                        <th is='sortable' :column="'no_request'">No. Tramite</th>
-                                        <th is='sortable' :column="'id_academic_degree'">Título Académico</th>
-                                        <th is='sortable' :column="'id_request_state'">Estado de Solicitud</th>
-                                        <th is='sortable' :column="'user_student'">Registro de Estudiante</th>
-                                        <th is='sortable' :column="'user_transcriber'">Código de Transcriptor</th>
+                                        <th is='sortable' :column="'no_request'">{{ trans('admin.procedure-request.columns.no_request') }}</th>
+                                        <th is='sortable' :column="'id_academic_degree'">{{ trans('admin.procedure-request.columns.id_academic_degree') }}</th>
+                                        <th is='sortable' :column="'id_request_state'">{{ trans('admin.procedure-request.columns.id_request_state') }}</th>
+                                        <th is='sortable' :column="'user_student'">{{ trans('admin.procedure-request.columns.user_student') }}</th>
+                                        <th is='sortable' :column="'user_transcriber'">{{ trans('admin.procedure-request.columns.user_transcriber') }}</th>
 
                                         <th></th>
                                     </tr>

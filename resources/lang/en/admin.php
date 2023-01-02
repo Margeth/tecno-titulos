@@ -423,11 +423,11 @@ return [
 
         'columns' => [
             'id' => 'ID',
-            'no_request' => 'No request',
-            'id_academic_degree' => 'Id academic degree',
-            'id_request_state' => 'Id request state',
-            'user_student' => 'User student',
-            'user_transcriber' => 'User transcriber',
+            'no_request' => 'No. Tramite ',
+            'id_academic_degree' => 'Titulo Academico',
+            'id_request_state' => 'Estado de Solicitud',
+            'user_student' => 'Registro de Estudiantes',
+            'user_transcriber' => 'Codigo de Transcriptor',
             
         ],
     ],
@@ -443,7 +443,7 @@ return [
 
         'columns' => [
             'id' => 'ID',
-            'no_request' => 'No request',
+            'no_request' => 'No. Solicitud',
             
         ],
     ],
