@@ -19,6 +19,9 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use App\Models\AcademicDegree;
+use App\Models\RequestState;
+use GuzzleHttp\Psr7\Request;
 
 class ProcedureRequestController extends Controller
 {
@@ -43,6 +46,9 @@ class ProcedureRequestController extends Controller
             ['id', 'no_request', 'id_academic_degree', 'id_request_state', 'user_student', 'user_transcriber']
         );
 
+        $data2=AcademicDegree::all();
+        $data3=RequestState::all();
+        echo "-------------------------data".$data;
         if ($request->ajax()) {
             if ($request->has('bulk')) {
                 return [
@@ -52,7 +58,7 @@ class ProcedureRequestController extends Controller
             return ['data' => $data];
         }
 
-        return view('admin.procedure-request.index', ['data' => $data]);
+        return view('admin.procedure-request.index', ['data' => $data,'data2' => $data2,'data3' => $data3]);
     }
 
     /**

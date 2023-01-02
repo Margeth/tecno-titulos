@@ -65,18 +65,18 @@ return [
     ],
 
     'btn' => [
-        'save' => 'Guardar',
-        'cancel' => 'Cancelar',
-        'edit' => 'Editar',
-        'delete' => 'Eliminar',
-        'search' => 'Buscar',
+        'save' => 'Save',
+        'cancel' => 'Cancel',
+        'edit' => 'Edit',
+        'delete' => 'Delete',
+        'search' => 'Search',
         'new' => 'New',
-        'saved' => 'Guardado',
+        'saved' => 'Saved',
     ],
 
     'index' => [
         'no_items' => 'Could not find any items',
-        'try_changing_items' => 'Intente cambiar los filtros o añada uno nuevo',
+        'try_changing_items' => 'Try changing the filters or add a new one',
     ],
 
     'listing' => [
@@ -94,8 +94,8 @@ return [
         'more_can_be_managed' => '({{ otherLocales.length }} more can be managed)',
         'currently_editing_translation' => 'Currently editing {{ this.defaultLocale.toUpperCase() }} (default) translation',
         'hide' => 'Hide Translations',
-        'select_an_option' => 'Seleccionar opciones',
-        'select_options' => 'Seleccionar opciones',
+        'select_an_option' => 'Select an option',
+        'select_options' => 'Select options',
         'publish' => 'Publish',
         'history' => 'History',
         'created_by' => 'Created by',
@@ -105,11 +105,11 @@ return [
     ],
 
     'placeholder' => [
-        'search' => 'Buscar'
+        'search' => 'Search'
     ],
 
     'pagination' => [
-        'overview' => 'Visualización de Items: 1 {{ pagination.state.from }} a {{ pagination.state.to }} de {{ pagination.state.total }} items totales.'
+        'overview' => 'Displaying items from {{ pagination.state.from }} to {{ pagination.state.to }} of total {{ pagination.state.total }} items.'
     ],
 
     'logo' => [
@@ -117,7 +117,7 @@ return [
     ],
 
     'profile_dropdown' => [
-        'account' => 'Cuenta',
+        'account' => 'Account',
     ],
 
     'sidebar' => [
@@ -133,8 +133,7 @@ return [
     ],
 
     'footer' => [
-        'powered_by' => 'Cantidad de vistas',
-
+        'powered_by' => 'Powered by',
     ]
 
 ];
