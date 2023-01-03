@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'page_title_suffix' => 'Craftable',
+    'page_title_suffix' => 'Departamento de Títulos',//Craftable
 
     'operation' => [
         'succeeded' => 'Operation successful',
@@ -65,13 +65,13 @@ return [
     ],
 
     'btn' => [
-        'save' => 'Save',
-        'cancel' => 'Cancel',
-        'edit' => 'Edit',
-        'delete' => 'Delete',
-        'search' => 'Search',
-        'new' => 'New',
-        'saved' => 'Saved',
+        'save' => 'Guardar',
+        'cancel' => 'Cancelar',
+        'edit' => 'Editar',
+        'delete' => 'Eliminar',
+        'search' => 'Buscar',
+        'new' => 'Nuevo',
+        'saved' => 'Guardado',
     ],
 
     'index' => [
@@ -105,7 +105,7 @@ return [
     ],
 
     'placeholder' => [
-        'search' => 'Search'
+        'search' => 'Buscar'
     ],
 
     'pagination' => [
@@ -113,7 +113,7 @@ return [
     ],
 
     'logo' => [
-        'title' => 'Craftable',
+        'title' => 'Departamento de Títulos',//Craftable
     ],
 
     'profile_dropdown' => [

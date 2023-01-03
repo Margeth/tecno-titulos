@@ -8,7 +8,7 @@ return [
         'actions' => [
             'index' => 'Usuarios',
             'create' => 'Nuevo Usuario',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar Usuario',//Edit :name
             'edit_profile' => 'Editar Perfil',
             'edit_password' => 'Editar Contraseña',
         ],
@@ -37,7 +37,7 @@ return [
         'actions' => [
             'index' => 'Posts',
             'create' => 'New Post',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar Usuario',
             'will_be_published' => 'Post will be published at',
         ],
 
@@ -58,7 +58,7 @@ return [
         'actions' => [
             'index' => 'Roles',
             'create' => 'Nuevo Rol',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar Rol',
         ],
 
         'columns' => [
@@ -92,7 +92,7 @@ return [
         'actions' => [
             'index' => 'Users',
             'create' => 'New User',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar Usuario',
         ],
 
         'columns' => [
@@ -119,7 +119,7 @@ return [
         'actions' => [
             'index' => 'Role Has Permission',
             'create' => 'New Role Has Permission',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar Usuario',
         ],
 
         'columns' => [
@@ -134,7 +134,7 @@ return [
         'actions' => [
             'index' => 'Permisos de Rol',
             'create' => 'Nuevo Permiso de Rol',// Role Has Permission
-            'edit' => 'Edit :name',
+            'edit' => 'Editar Rol',
         ],
 
         'columns' => [
@@ -151,7 +151,7 @@ return [
         'actions' => [
             'index' => 'Tipos de Títulos',
             'create' => 'Nuevo Tipos de Títulos',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar Tipos de Titulo',
         ],
 
         'columns' => [
@@ -167,7 +167,7 @@ return [
         'actions' => [
             'index' => 'Institución',
             'create' => 'Nueva Institución',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar',
         ],
 
         'columns' => [
@@ -184,7 +184,7 @@ return [
         'actions' => [
             'index' => 'Gestión De Títulos',
             'create' => 'Nueva Gestión De Títulos',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar',
         ],
 
         'columns' => [
@@ -202,7 +202,7 @@ return [
         'actions' => [
             'index' => 'Gestión de Requisitos Generales',
             'create' => 'Nueva Gestión de Requisitos Generales',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar',
         ],
 
         'columns' => [
@@ -220,7 +220,7 @@ return [
         'actions' => [
             'index' => 'Gestión de Requisito por Título',
             'create' => 'Nueva Gestión de Requisito por Título',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar',
         ],
 
         'columns' => [
@@ -237,7 +237,7 @@ return [
         'actions' => [
             'index' => 'Usuarios',
             'create' => 'Nuevo Usuarios',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar',
             'edit_profile' => 'Editar Perfil',//Edit Profile
             'edit_password' => 'Editar Contraseña',
         ],
@@ -273,9 +273,9 @@ return [
         'actions' => [
             'index' => 'Usuarios',
             'create' => 'Nuevo Usuarios',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar',
             'edit_profile' => 'Editar Perfil',//Edit Profile
-            'edit_password' => 'Edit Editar Contraseña',//
+            'edit_password' => 'Editar Contraseña',//
         ],
 
         'columns' => [
@@ -309,7 +309,7 @@ return [
         'actions' => [
             'index' => 'Usuarios',//Users
             'create' => 'Nuevo Usuario',//New User
-            'edit' => 'Edit :name',
+            'edit' => 'Editar',
             'edit_profile' => 'Editar Perfil',//Edit Profile
             'edit_password' => 'Editar Contraseña',
         ],
@@ -345,7 +345,7 @@ return [
         'actions' => [
             'index' => 'Solicitud de Trámite',
             'create' => 'Nueva Solicitud de Trámite',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar',
         ],
 
         'columns' => [
@@ -365,7 +365,7 @@ return [
         'actions' => [
             'index' => 'Gestión De Títulos',
             'create' => 'Nuevo Gestión De Títulos ',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar',
         ],
 
         'columns' => [
@@ -383,7 +383,7 @@ return [
         'actions' => [
             'index' => 'Usuarios',
             'create' => 'Nuevo Usuario',
-            'edit' => 'Edit :Nombre',
+            'edit' => 'Editar',
             'edit_profile' => 'Editar Perfil',
             'edit_password' => 'Editar Contraseña',
         ],
@@ -419,7 +419,7 @@ return [
         'actions' => [
             'index' => 'Solicitud de Trámite',
             'create' => 'Nueva Solicitud de Trámite',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar',
         ],
 
         'columns' => [
@@ -439,7 +439,7 @@ return [
         'actions' => [
             'index' => 'Acta',
             'create' => 'Nueva Acta',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar',
         ],
 
         'columns' => [
@@ -455,7 +455,7 @@ return [
         'actions' => [
             'index' => 'Títulos Académicos de Usuarios',
             'create' => 'Nuevo Títulos Académicos de Usuarios',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar',
         ],
 
         'columns' => [
@@ -472,7 +472,7 @@ return [
         'actions' => [
             'index' => 'Tramite a Firmar',
             'create' => 'Nuevo Tramite a Firmar',//New Signer
-            'edit' => 'Edit :name',
+            'edit' => 'Editar',
         ],
 
         'columns' => [
@@ -492,7 +492,7 @@ return [
         'actions' => [
             'index' => 'Stats',
             'create' => 'New Stat',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar',
         ],
 
         'columns' => [
@@ -509,7 +509,7 @@ return [
         'actions' => [
             'index' => 'Stat',
             'create' => 'New Stat',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar',
         ],
 
         'columns' => [
@@ -517,14 +517,14 @@ return [
             
         ],
     ],
--
+//----------------------------------------
     'stat' => [
         'title' => 'Stats',
 
         'actions' => [
             'index' => 'Stats',
             'create' => 'New Stat',
-            'edit' => 'Edit :name',
+            'edit' => 'Editar',
         ],
 
         'columns' => [
