@@ -3,26 +3,26 @@
 return [
     #
     'admin-user' => [
-        'title' => 'Users',
+        'title' => 'Usuarios',
 
         'actions' => [
-            'index' => 'Users',
-            'create' => 'New User',
+            'index' => 'Usuarios',
+            'create' => 'Nuevo Usuario',
             'edit' => 'Edit :name',
-            'edit_profile' => 'Edit Profile',
-            'edit_password' => 'Edit Password',
+            'edit_profile' => 'Editar Perfil',
+            'edit_password' => 'Editar Contraseña',
         ],
     
         'columns' => [
             'id' => 'ID',
-            'last_login_at' => 'Last login',
-            'first_name' => 'First name',
-            'last_name' => 'Last name',
+            'last_login_at' => 'Último acceso',//Last login
+            'first_name' => 'Nombres',//First name
+            'last_name' => 'Apellidos',//Last name
             'email' => 'Email',
-            'password' => 'Password',
-            'password_repeat' => 'Password Confirmation',
-            'activated' => 'Activated',
-            'forbidden' => 'Forbidden',
+            'password' => 'Contraseña',
+            'password_repeat' => 'Confirmación de Contraseña',
+            'activated' => 'Activado',
+            'forbidden' => 'Prohibido',
             'language' => 'Language',
                 
             //Belongs to many relations
@@ -64,7 +64,7 @@ return [
         'columns' => [
             'id' => 'ID',
             'name' => 'Nombre',
-            'guard_name' => 'Guard name',
+            'guard_name' => 'Tipo de Usuario',//Guard name
             
         ],
     ],
@@ -81,7 +81,7 @@ return [
         'columns' => [
             'id' => 'ID',
             'name' => 'Nombre',
-            'guard_name' => 'Guard name',
+            'guard_name' => 'Tipo de Usuario',//Guard name
             
         ],
     ],
@@ -102,19 +102,19 @@ return [
             'phone' => 'Phone',
             'address' => 'Address',
             'date_bird' => 'Date bird',
-            'gender' => 'Gender',
-            'country' => 'Country',
-            'city' => 'City',
-            'province' => 'Province',
+            'gender' => 'Género',
+            'country' => 'País',
+            'city' => 'Ciudad',
+            'province' => 'Provincia',
             'email' => 'Email',
-            'email_verified_at' => 'Email verified at',
-            'password' => 'Password',
+            'email_verified_at' => 'Email Verificado',
+            'password' => 'Contraseña',
             
         ],
     ],
 
     'role-has-permission' => [
-        'title' => 'Role Has Permission',
+        'title' => 'Permisos de Rol',
 
         'actions' => [
             'index' => 'Role Has Permission',
@@ -129,18 +129,18 @@ return [
     ],
 
     'role-has-permission' => [
-        'title' => 'Role Has Permissions',
+        'title' => 'Permisos de Rol',//Role Has Permissions
 
         'actions' => [
-            'index' => 'Role Has Permissions',
-            'create' => 'New Role Has Permission',
+            'index' => 'Permisos de Rol',
+            'create' => 'Nuevo Permiso de Rol',// Role Has Permission
             'edit' => 'Edit :name',
         ],
 
         'columns' => [
             'id' => 'ID',
-            'permission_id' => 'Permission',
-            'role_id' => 'Role',
+            'permission_id' => 'Permiso',
+            'role_id' => 'Rol',
             
         ],
     ],
@@ -160,19 +160,19 @@ return [
             
         ],
     ],
-//---------------------------------------Entidades
+//---------------------------------------Entidades(Institución)-----------------
     'entity' => [
-        'title' => 'Entidad',
+        'title' => 'Institución',
 
         'actions' => [
-            'index' => 'Entidad',
-            'create' => 'Nueva Entidad',
+            'index' => 'Institución',
+            'create' => 'Nueva Institución',
             'edit' => 'Edit :name',
         ],
 
         'columns' => [
             'id' => 'ID',
-            'code' => 'Codigo',
+            'code' => 'Cod. Carrera',
             'name' => 'Nombre',
             
         ],
@@ -232,33 +232,33 @@ return [
     ],
 
     'admin-user' => [
-        'title' => 'Users',
+        'title' => 'Usuarios',
 
         'actions' => [
-            'index' => 'Users',
-            'create' => 'New User',
+            'index' => 'Usuarios',
+            'create' => 'Nuevo Usuarios',
             'edit' => 'Edit :name',
-            'edit_profile' => 'Edit Profile',
-            'edit_password' => 'Edit Password',
+            'edit_profile' => 'Editar Perfil',//Edit Profile
+            'edit_password' => 'Editar Contraseña',
         ],
 
         'columns' => [
             'id' => 'ID',
-            'last_login_at' => 'Last login',
-            'first_name' => 'First name',
-            'last_name' => 'Last name',
+            'last_login_at' => 'Último acceso',
+            'first_name' => 'Nombres',
+            'last_name' => 'Apellidos',//Last name
             'ci' => 'Ci',
-            'code' => 'Code',
-            'gender' => 'Gender',
-            'date_of_birth' => 'Date of birth',
-            'country' => 'Country',
-            'city' => 'City',
-            'province' => 'Province',
+            'code' => 'Codigo',
+            'gender' => 'Género',
+            'date_of_birth' => 'Fecha de Nacimiento',//Date of birth
+            'country' => 'País',
+            'city' => 'Ciudad',
+            'province' => 'Provincia',
             'email' => 'Email',
-            'password' => 'Password',
-            'password_repeat' => 'Password Confirmation',
-            'activated' => 'Activated',
-            'forbidden' => 'Forbidden',
+            'password' => 'Contraseña',
+            'password_repeat' => 'Confirmación de Contraseña',
+            'activated' => 'Activado',
+            'forbidden' => 'Prohibido',
             'language' => 'Language',
                 
             //Belongs to many relations
@@ -268,153 +268,153 @@ return [
     ],
 
     'admin-user' => [
-        'title' => 'Users',
+        'title' => 'Usuarios',
 
         'actions' => [
-            'index' => 'Users',
-            'create' => 'New User',
+            'index' => 'Usuarios',
+            'create' => 'Nuevo Usuarios',
             'edit' => 'Edit :name',
-            'edit_profile' => 'Edit Profile',
-            'edit_password' => 'Edit Password',
+            'edit_profile' => 'Editar Perfil',//Edit Profile
+            'edit_password' => 'Edit Editar Contraseña',//
         ],
 
         'columns' => [
             'id' => 'ID',
-            'last_login_at' => 'Last login',
-            'first_name' => 'First name',
-            'last_name' => 'Last name',
+            'last_login_at' => 'Último acceso',
+            'first_name' => 'Nombres',
+            'last_name' => 'Apellidos',
             'email' => 'Email',
-            'password' => 'Password',
-            'password_repeat' => 'Password Confirmation',
-            'activated' => 'Activated',
-            'forbidden' => 'Forbidden',
+            'password' => 'Contraseña',
+            'password_repeat' => 'Confirmación de Contraseña',
+            'activated' => 'Activado',
+            'forbidden' => 'Prohibido',
             'language' => 'Language',
             'ci' => 'Ci',
-            'code' => 'Code',
-            'gender' => 'Gender',
-            'date_of_birth' => 'Date of birth',
-            'country' => 'Country',
-            'city' => 'City',
-            'province' => 'Province',
+            'code' => 'Codigo',
+            'gender' => 'Género',
+            'date_of_birth' => 'Fecha de Nacimiento',
+            'country' => 'País',
+            'city' => 'Ciudad',
+            'province' => 'Provincia',
                 
             //Belongs to many relations
             'roles' => 'Roles',
                 
         ],
     ],
-
+//-----------------------------------usuario administrador------------------
     'admin-user' => [
-        'title' => 'Users',
+        'title' => 'Usuarios',//Users
 
         'actions' => [
-            'index' => 'Users',
-            'create' => 'New User',
+            'index' => 'Usuarios',//Users
+            'create' => 'Nuevo Usuario',//New User
             'edit' => 'Edit :name',
-            'edit_profile' => 'Edit Profile',
-            'edit_password' => 'Edit Password',
+            'edit_profile' => 'Editar Perfil',//Edit Profile
+            'edit_password' => 'Editar Contraseña',
         ],
 
         'columns' => [
             'id' => 'ID',
-            'last_login_at' => 'Last login',
-            'first_name' => 'First name',
-            'last_name' => 'Last name',
+            'last_login_at' => 'Último acceso',
+            'first_name' => 'Nombres',
+            'last_name' => 'Apellidos',
             'email' => 'Email',
-            'password' => 'Password',
-            'password_repeat' => 'Password Confirmation',
-            'activated' => 'Activated',
-            'forbidden' => 'Forbidden',
+            'password' => 'Contraseña',
+            'password_repeat' => 'Confirmación de Contraseña',
+            'activated' => 'Activado',
+            'forbidden' => 'Prohibido',
             'language' => 'Language',
             'ci' => 'Ci',
-            'code' => 'Code',
-            'gender' => 'Gender',
-            'date_of_birth' => 'Date of birth',
-            'country' => 'Country',
-            'city' => 'City',
-            'province' => 'Province',
+            'code' => 'Codigo',
+            'gender' => 'Género',
+            'date_of_birth' => 'Fecha de Nacimiento',
+            'country' => 'País',
+            'city' => 'Ciudad',
+            'province' => 'Provincia',
                 
             //Belongs to many relations
             'roles' => 'Roles',
                 
         ],
     ],
-
+//------------------------------Procedure RequestSolicitud de trámite----------------------------
     'procedure-request' => [
-        'title' => 'Procedure Request',
+        'title' => 'Solicitud de Trámite',//Procedure Request
 
         'actions' => [
-            'index' => 'Procedure Request',
-            'create' => 'New Procedure Request',
+            'index' => 'Solicitud de Trámite',
+            'create' => 'Nueva Solicitud de Trámite',
             'edit' => 'Edit :name',
         ],
 
         'columns' => [
             'id' => 'ID',
             'no_request' => 'Nro Solicitud',
-            'id_academic_degree' => 'Id academic degree',
-            'id_request_state' => 'Id request state',
-            'user_student' => 'User student',
-            'user_transcriber' => 'User transcriber',
+            'id_academic_degree' => 'Id Títulos Académicos',//academic degree
+            'id_request_state' => 'Estado de Solicitud',//Id request state
+            'user_student' => 'Registro de Estudiantes',
+            'user_transcriber' => 'Codigo de Transcriptor',
             
         ],
     ],
-
+//---------------------------Gestión De Títulos 
     'academic-degree' => [
-        'title' => 'Academic Degree',
+        'title' => 'Gestión De Títulos',
 
         'actions' => [
-            'index' => 'Academic Degree',
-            'create' => 'New Academic Degree',
+            'index' => 'Gestión De Títulos',
+            'create' => 'Nuevo Gestión De Títulos ',
             'edit' => 'Edit :name',
         ],
 
         'columns' => [
             'id' => 'ID',
-            'id_entity' => 'Id entity',
-            'id_type' => 'Id type',
-            'name' => 'Name',
+            'id_entity' => 'Cod. Carrera',//Id entity
+            'id_type' => 'Tipo',//Id type
+            'name' => 'Nombre',
             
         ],
     ],
 
     'admin-user' => [
-        'title' => 'Users',
+        'title' => 'Usuarios',//Users
 
         'actions' => [
-            'index' => 'Users',
-            'create' => 'New User',
-            'edit' => 'Edit :name',
-            'edit_profile' => 'Edit Profile',
-            'edit_password' => 'Edit Password',
+            'index' => 'Usuarios',
+            'create' => 'Nuevo Usuario',
+            'edit' => 'Edit :Nombre',
+            'edit_profile' => 'Editar Perfil',
+            'edit_password' => 'Editar Contraseña',
         ],
 //---------Gestion de usuario---------------------------
         'columns' => [
             'id' => 'ID',
             'last_login_at' => 'Último acceso',//Last login
-            'first_name' => 'Primer Nombre',
-            'last_name' => 'Apellido',//Last name
+            'first_name' => 'Nombres',//First name
+            'last_name' => 'Apellidos',//Last name
             'email' => 'Email',
-            'password' => 'Password',
-            'password_repeat' => 'Password Confirmation',
-            'activated' => 'Activated',
-            'forbidden' => 'Forbidden',
-            'language' => 'Language',
+            'password' => 'Contraseña',
+            'password_repeat' => 'Confirmación de Contraseña',//Password Confirmation
+            'activated' => 'Activado',
+            'forbidden' => 'Prohibido',
+            'language' => 'Lenguaje',
             'ci' => 'Ci',
             'code' => 'Codigo',//code
-            'gender' => 'Gender',
-            'date_of_birth' => 'Date of birth',
-            'country' => 'Country',
-            'city' => 'City',
-            'province' => 'Province',
+            'gender' => 'Género',//Gender
+            'date_of_birth' => 'Fecha de Nacimiento',//Date of birth
+            'country' => 'País',
+            'city' => 'Ciudad',//City
+            'province' => 'Provincia',
                 
             //Belongs to many relations
             'roles' => 'Roles',
                 
         ],
     ],
-
+//------------------------------------Solicitud de trámite(Procedure Request)-----
     'procedure-request' => [
-        'title' => 'Procedure Request',
+        'title' => 'Solicitud de Trámite',
 
         'actions' => [
             'index' => 'Solicitud de Trámite',
@@ -426,13 +426,13 @@ return [
             'id' => 'ID',
             'no_request' => 'No. Tramite ',
             'id_academic_degree' => 'Titulo Academico',
-            'id_request_state' => 'Estado de Solicitud',
-            'user_student' => 'Registro de Estudiantes',
-            'user_transcriber' => 'Codigo de Transcriptor',
+            'id_request_state' => 'Estado de Solicitud',//Id request state
+            'user_student' => 'Registro de Estudiantes', //user student
+            'user_transcriber' => 'Codigo de Transcriptor',//user transcriber
             
         ],
     ],
-//--------------------------------Actas
+//--------------------------------Actas--------------------------------------
     'minute' => [
         'title' => 'Actas',
 
@@ -465,7 +465,7 @@ return [
             
         ],
     ],
-
+//-----------------------Tramites a Firmar------------------------
     'signer' => [
         'title' => 'Tramite a Firmar',
 
@@ -474,7 +474,7 @@ return [
             'create' => 'Nuevo Tramite a Firmar',//New Signer
             'edit' => 'Edit :name',
         ],
-//-----------------------Tramites a Firmar
+
         'columns' => [
             'id' => 'ID',
             'id_minute' => 'Acta', //Id Minute
@@ -502,7 +502,7 @@ return [
             
         ],
     ],
-
+//---------------------------------Estadisticas-----------------------------------
     'stat' => [
         'title' => 'Stat',
 
@@ -517,7 +517,7 @@ return [
             
         ],
     ],
-
+-
     'stat' => [
         'title' => 'Stats',
 
