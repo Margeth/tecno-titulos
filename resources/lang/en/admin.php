@@ -1,6 +1,7 @@
 <?php
 
 return [
+    #
     'admin-user' => [
         'title' => 'Users',
 
@@ -11,7 +12,7 @@ return [
             'edit_profile' => 'Edit Profile',
             'edit_password' => 'Edit Password',
         ],
-
+    
         'columns' => [
             'id' => 'ID',
             'last_login_at' => 'Last login',
@@ -50,36 +51,36 @@ return [
             
         ],
     ],
-
+//----------------------Roles------------------------------------------------------------
     'role' => [
         'title' => 'Roles',
 
         'actions' => [
             'index' => 'Roles',
-            'create' => 'New Role',
+            'create' => 'Nuevo Rol',
             'edit' => 'Edit :name',
         ],
 
         'columns' => [
             'id' => 'ID',
-            'name' => 'Name',
+            'name' => 'Nombre',
             'guard_name' => 'Guard name',
             
         ],
     ],
 
     'permission' => [
-        'title' => 'Permissions',
+        'title' => 'Permisos',
 
         'actions' => [
-            'index' => 'Permissions',
-            'create' => 'New Permission',
+            'index' => 'Permisos',
+            'create' => 'Nuevo Permisos',
             'edit' => 'Edit :name',
         ],
 
         'columns' => [
             'id' => 'ID',
-            'name' => 'Name',
+            'name' => 'Nombre',
             'guard_name' => 'Guard name',
             
         ],
@@ -143,89 +144,89 @@ return [
             
         ],
     ],
-
+     //----------------------------------------------------Tipos de Titulo
     'type-academic-degree' => [
-        'title' => 'Type Academic Degree',
+        'title' => 'Tipos de Títulos',
 
         'actions' => [
-            'index' => 'Type Academic Degree',
-            'create' => 'New Type Academic Degree',
+            'index' => 'Tipos de Títulos',
+            'create' => 'Nuevo Tipos de Títulos',
             'edit' => 'Edit :name',
         ],
 
         'columns' => [
             'id' => 'ID',
-            'name' => 'Name',
+            'name' => 'Nombre',
             
         ],
     ],
-
+//---------------------------------------Entidades
     'entity' => [
-        'title' => 'Entity',
+        'title' => 'Entidad',
 
         'actions' => [
-            'index' => 'Entity',
-            'create' => 'New Entity',
+            'index' => 'Entidad',
+            'create' => 'Nueva Entidad',
             'edit' => 'Edit :name',
         ],
 
         'columns' => [
             'id' => 'ID',
-            'code' => 'Code',
-            'name' => 'Name',
+            'code' => 'Codigo',
+            'name' => 'Nombre',
             
         ],
     ],
-
+///--------------------------------------Gestión De Títulos
     'academic-degree' => [
-        'title' => 'Academic Degree',
+        'title' => 'Gestión De Títulos',
 
         'actions' => [
-            'index' => 'Academic Degree',
-            'create' => 'New Academic Degree',
+            'index' => 'Gestión De Títulos',
+            'create' => 'Nueva Gestión De Títulos',
             'edit' => 'Edit :name',
         ],
 
         'columns' => [
             'id' => 'ID',
-            'id_entity' => 'Id entity',
-            'id_type' => 'Id type',
-            'name' => 'Name',
+            'id_entity' => 'ID Entidad',
+            'id_type' => 'ID Tipo',
+            'name' => 'Nombre',
             
         ],
     ],
 
     'requirement' => [
-        'title' => 'Requirement',
+        'title' => 'Gestión de Requisitos Generales',
 
         'actions' => [
-            'index' => 'Requirement',
-            'create' => 'New Requirement',
+            'index' => 'Gestión de Requisitos Generales',
+            'create' => 'Nueva Gestión de Requisitos Generales',
             'edit' => 'Edit :name',
         ],
 
         'columns' => [
             'id' => 'ID',
-            'name' => 'Name',
-            'quantity' => 'Quantity',
-            'observation' => 'Observation',
+            'name' => 'Nombre',
+            'quantity' => 'Cantidad',
+            'observation' => 'Observación',
             
         ],
     ],
-
+//-------------Gestión de Requisito por Título
     'academic-degree-requirement' => [
-        'title' => 'Academic Degree Requirement',
+        'title' => 'Gestión de Requisito por Título',
 
         'actions' => [
-            'index' => 'Academic Degree Requirement',
-            'create' => 'New Academic Degree Requirement',
+            'index' => 'Gestión de Requisito por Título',
+            'create' => 'Nueva Gestión de Requisito por Título',
             'edit' => 'Edit :name',
         ],
 
         'columns' => [
             'id' => 'ID',
-            'id_type_academic_degree' => 'Id type academic degree',
-            'id_requirement' => 'Id requirement',
+            'id_type_academic_degree' => 'ID Tipos de Títulos Académicos',
+            'id_requirement' => 'Id Requisito',
             
         ],
     ],
@@ -349,7 +350,7 @@ return [
 
         'columns' => [
             'id' => 'ID',
-            'no_request' => 'No request',
+            'no_request' => 'Nro Solicitud',
             'id_academic_degree' => 'Id academic degree',
             'id_request_state' => 'Id request state',
             'user_student' => 'User student',
@@ -386,12 +387,12 @@ return [
             'edit_profile' => 'Edit Profile',
             'edit_password' => 'Edit Password',
         ],
-
+//---------Gestion de usuario---------------------------
         'columns' => [
             'id' => 'ID',
-            'last_login_at' => 'Last login',
-            'first_name' => 'First name',
-            'last_name' => 'Last name',
+            'last_login_at' => 'Último acceso',//Last login
+            'first_name' => 'Primer Nombre',
+            'last_name' => 'Apellido',//Last name
             'email' => 'Email',
             'password' => 'Password',
             'password_repeat' => 'Password Confirmation',
@@ -399,7 +400,7 @@ return [
             'forbidden' => 'Forbidden',
             'language' => 'Language',
             'ci' => 'Ci',
-            'code' => 'Code',
+            'code' => 'Codigo',//code
             'gender' => 'Gender',
             'date_of_birth' => 'Date of birth',
             'country' => 'Country',
@@ -416,8 +417,8 @@ return [
         'title' => 'Procedure Request',
 
         'actions' => [
-            'index' => 'Procedure Request',
-            'create' => 'New Procedure Request',
+            'index' => 'Solicitud de Trámite',
+            'create' => 'Nueva Solicitud de Trámite',
             'edit' => 'Edit :name',
         ],
 
@@ -431,13 +432,13 @@ return [
             
         ],
     ],
-
+//--------------------------------Actas
     'minute' => [
-        'title' => 'Minute',
+        'title' => 'Actas',
 
         'actions' => [
-            'index' => 'Minute',
-            'create' => 'New Minute',
+            'index' => 'Acta',
+            'create' => 'Nueva Acta',
             'edit' => 'Edit :name',
         ],
 
@@ -447,40 +448,40 @@ return [
             
         ],
     ],
-
+///------------------------------------------------------------Titulos academicos
     'user-academic-degree' => [
-        'title' => 'User Academic Degree',
+        'title' => 'Títulos Académicos de Usuarios',//User Academic Degree
 
         'actions' => [
-            'index' => 'User Academic Degree',
-            'create' => 'New User Academic Degree',
+            'index' => 'Títulos Académicos de Usuarios',
+            'create' => 'Nuevo Títulos Académicos de Usuarios',
             'edit' => 'Edit :name',
         ],
 
         'columns' => [
             'id' => 'ID',
-            'no_request' => 'No request',
-            'code_academic_degree' => 'Code academic degree',
+            'no_request' => 'Nro de Solicitud',
+            'code_academic_degree' => 'Código  de Grado Académico',
             
         ],
     ],
 
     'signer' => [
-        'title' => 'Signer',
+        'title' => 'Tramite a Firmar',
 
         'actions' => [
-            'index' => 'Signer',
-            'create' => 'New Signer',
+            'index' => 'Tramite a Firmar',
+            'create' => 'Nuevo Tramite a Firmar',//New Signer
             'edit' => 'Edit :name',
         ],
-
+//-----------------------Tramites a Firmar
         'columns' => [
             'id' => 'ID',
-            'id_minute' => 'Id minute',
-            'code_user_academic_degre' => 'Code user academic degre',
-            'code' => 'Code',
-            'id_step' => 'Id step',
-            'is_signed' => 'Is signed',
+            'id_minute' => 'Acta', //Id Minute
+            'code_user_academic_degre' => 'Título académico del usuario del código',
+            'code' => 'Codigo',
+            'id_step' => 'Pasos',//Id step
+            'is_signed' => 'Está Firmado',//Is signed
             
         ],
     ],
