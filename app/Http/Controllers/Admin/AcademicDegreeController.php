@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\Models\TypeAcademicDegree;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\AcademicDegree\BulkDestroyAcademicDegree;
 use App\Http\Requests\Admin\AcademicDegree\DestroyAcademicDegree;
@@ -42,7 +42,7 @@ class AcademicDegreeController extends Controller
             // set columns to searchIn
             ['id', 'id_entity', 'name']
         );
-
+        $data2=TypeAcademicDegree::all();
         if ($request->ajax()) {
             if ($request->has('bulk')) {
                 return [
@@ -52,7 +52,7 @@ class AcademicDegreeController extends Controller
             return ['data' => $data];
         }
 
-        return view('admin.academic-degree.index', ['data' => $data]);
+        return view('admin.academic-degree.index', ['data' => $data,'data2' => $data2]);
     }
 
     /**
@@ -64,8 +64,8 @@ class AcademicDegreeController extends Controller
     public function create()
     {
         $this->authorize('admin.academic-degree.create');
-
-        return view('admin.academic-degree.create');
+        $data2=TypeAcademicDegree::all();
+        return view('admin.academic-degree.create',['data2' => $data2]);
     }
 
     /**
@@ -114,8 +114,8 @@ class AcademicDegreeController extends Controller
     {
         $this->authorize('admin.academic-degree.edit', $academicDegree);
 
-
-        return view('admin.academic-degree.edit', [
+        $data2=TypeAcademicDegree::all();
+        return view('admin.academic-degree.edit',['data2' => $data2], [
             'academicDegree' => $academicDegree,
         ]);
     }

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateAcademicDegree extends Migration
 {
-    /**
+    /**--------------------Gestión De Títulos-----------------------------
      * Run the migrations.
      *
      * @return void

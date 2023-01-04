@@ -20,6 +20,7 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
+
 class TypeAcademicDegreeController extends Controller
 {
 

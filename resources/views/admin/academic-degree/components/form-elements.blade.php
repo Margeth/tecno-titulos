@@ -9,7 +9,9 @@
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('id_type'), 'has-success': fields.id_type && fields.id_type.valid }">
     <label for="id_type" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.academic-degree.columns.id_type') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-        <input type="text" v-model="form.id_type" v-validate="'required|integer'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('id_type'), 'form-control-success': fields.id_type && fields.id_type.valid}" id="id_type" name="id_type" placeholder="{{ trans('admin.academic-degree.columns.id_type') }}">
+        <select type="text" v-model="form.id_type" v-validate="'required|integer'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('id_type'), 'form-control-success': fields.id_type && fields.id_type.valid}" id="id_type" name="id_type" placeholder="{{ trans('admin.academic-degree.columns.id_type') }}">
+            <option v-for="(item,index) in data2" :key="index" :value="item['id']"> @{{item.name}}</option>
+         </select>
         <div v-if="errors.has('id_type')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('id_type') }}</div>
     </div>
 </div>
