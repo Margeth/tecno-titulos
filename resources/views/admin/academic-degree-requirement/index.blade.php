@@ -6,6 +6,8 @@
 
     <academic-degree-requirement-listing
         :data="{{ $data->toJson() }}"
+        :data2="{{ $data2 }}"
+        :data3="{{ $data3 }}"
         :url="'{{ url('admin/academic-degree-requirements') }}'"
         inline-template>
 
@@ -76,8 +78,8 @@
                                         </td>
 
                                     <td>@{{ item.id }}</td>
-                                        <td>@{{ item.id_type_academic_degree }}</td>
-                                        <td>@{{ item.id_requirement }}</td>
+                                        <td>@{{ getDataToArray(data3,'id',item.id_type_academic_degree,'name') }}</td>
+                                        <td>@{{ getDataToArray(data2,'id',item.id_requirement,'name') }}</td>
 
                                         <td>
                                             <div class="row no-gutters">

@@ -19,6 +19,8 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use App\Models\Requirement;
+use App\Models\TypeAcademicDegree;
 
 class AcademicDegreeRequirementController extends Controller
 {
@@ -43,6 +45,9 @@ class AcademicDegreeRequirementController extends Controller
             ['id']
         );
 
+        $data2 = Requirement::all();
+        $data3 = TypeAcademicDegree::all();
+
         if ($request->ajax()) {
             if ($request->has('bulk')) {
                 return [
@@ -52,7 +57,7 @@ class AcademicDegreeRequirementController extends Controller
             return ['data' => $data];
         }
 
-        return view('admin.academic-degree-requirement.index', ['data' => $data]);
+        return view('admin.academic-degree-requirement.index', ['data' => $data , 'data2'=>$data2 , 'data3' => $data3]);
     }
 
     /**
@@ -65,7 +70,10 @@ class AcademicDegreeRequirementController extends Controller
     {
         $this->authorize('admin.academic-degree-requirement.create');
 
-        return view('admin.academic-degree-requirement.create');
+        $data2 = Requirement::all();
+        $data3 = TypeAcademicDegree::all();
+
+        return view('admin.academic-degree-requirement.create',compact('data2','data3'));
     }
 
     /**
@@ -113,10 +121,13 @@ class AcademicDegreeRequirementController extends Controller
     public function edit(AcademicDegreeRequirement $academicDegreeRequirement)
     {
         $this->authorize('admin.academic-degree-requirement.edit', $academicDegreeRequirement);
-
+        $data2 = Requirement::all();
+        $data3 = TypeAcademicDegree::all();
 
         return view('admin.academic-degree-requirement.edit', [
             'academicDegreeRequirement' => $academicDegreeRequirement,
+            'data2'=>$data2 , 
+            'data3'=>$data3 ,
         ]);
     }
 

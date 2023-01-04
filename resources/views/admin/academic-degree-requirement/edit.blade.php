@@ -10,6 +10,8 @@
             <academic-degree-requirement-form
                 :action="'{{ $academicDegreeRequirement->resource_url }}'"
                 :data="{{ $academicDegreeRequirement->toJson() }}"
+                :data2="{{$data2}}"
+                :data3="{{$data3}}"
                 v-cloak
                 inline-template>
             
