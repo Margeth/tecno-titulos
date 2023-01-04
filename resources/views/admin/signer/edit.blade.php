@@ -10,6 +10,7 @@
             <signer-form
                 :action="'{{ $signer->resource_url }}'"
                 :data="{{ $signer->toJson() }}"
+                :data2="{{ $data2 }}" 
                 v-cloak
                 inline-template>
             

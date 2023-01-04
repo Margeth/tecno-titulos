@@ -10,9 +10,10 @@
         
         <procedure-request-form
             :action="'{{ url('admin/procedure-requests') }}'"
+            :data2 = "{{$data2}}"
+            :data3 = "{{$data3}}"
             v-cloak
             inline-template>
-
             <form class="form-horizontal form-create" method="post" @submit.prevent="onSubmit" :action="action" novalidate>
                 
                 <div class="card-header">

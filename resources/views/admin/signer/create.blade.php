@@ -10,6 +10,7 @@
         
         <signer-form
             :action="'{{ url('admin/signers') }}'"
+            :data2="{{ $data2 }}"  
             v-cloak
             inline-template>
 

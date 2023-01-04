@@ -1,0 +1,17 @@
+// Loaders and icons
+@import "images";
+
+// Colors
+$primary: #4273FA !default;
+$danger: #FE3F61 !default;
+$success: #60CF7D !default;
+$warning: #F5BE30 !default;
+$mutedText: #b9c8de !default;
+
+$sidebar-bg: #485779 !default;
+$sidebar-nav-link-active-bg: $primary !default;
+$sidebar-nav-link-active-icon-color: white !default;
+$pagination-hover-bg: #f3f8ff !default;
+
+// Active loader
+$loader: $threeDots !default;

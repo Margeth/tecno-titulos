@@ -3,9 +3,10 @@
 @section('title', trans('admin.signer.actions.index'))
 
 @section('body')
-
+    <!--:data2="{{ $data2 }} esto es un arreglo"-->
     <signer-listing
         :data="{{ $data->toJson() }}"
+        :data2="{{ $data2 }}"  
         :url="'{{ url('admin/signers') }}'"
         inline-template>
 
@@ -82,8 +83,8 @@
                                         <td>@{{ item.id_minute }}</td>
                                         <td>@{{ item.code_user_academic_degre }}</td>
                                         <td>@{{ item.code }}</td>
-                                        <td>@{{ item.id_step }}</td>
-                                        <td>@{{ item.is_signed }}</td>
+                                        <td>@{{ getDataToArray(data2,'id',item.id_step,'name') }}</td>  
+                                        <td>@{{ item.is_signed?'Si':'No'}}</td>
 
                                         <td>
                                             <div class="row no-gutters">

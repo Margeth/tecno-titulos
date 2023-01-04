@@ -19,6 +19,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use App\Models\StepSigner;
 
 class SignerController extends Controller
 {
@@ -42,6 +43,7 @@ class SignerController extends Controller
             // set columns to searchIn
             ['id', 'id_minute', 'code_user_academic_degre', 'code', 'id_step', 'is_signed']
         );
+        $data2=StepSigner::all();
 
         if ($request->ajax()) {
             if ($request->has('bulk')) {
@@ -51,8 +53,8 @@ class SignerController extends Controller
             }
             return ['data' => $data];
         }
-
-        return view('admin.signer.index', ['data' => $data]);
+        
+        return view('admin.signer.index', ['data' => $data,'data2' => $data2]);
     }
 
     /**
@@ -63,9 +65,10 @@ class SignerController extends Controller
      */
     public function create()
     {
+        $data2=StepSigner::all();
         $this->authorize('admin.signer.create');
 
-        return view('admin.signer.create');
+        return view('admin.signer.create',['data2' => $data2]);
     }
 
     /**
@@ -113,9 +116,9 @@ class SignerController extends Controller
     public function edit(Signer $signer)
     {
         $this->authorize('admin.signer.edit', $signer);
+        $data2=StepSigner::all();
 
-
-        return view('admin.signer.edit', [
+        return view('admin.signer.edit',['data2' => $data2], [
             'signer' => $signer,
         ]);
     }

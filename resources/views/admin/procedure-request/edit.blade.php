@@ -9,7 +9,9 @@
 
             <procedure-request-form
                 :action="'{{ $procedureRequest->resource_url }}'"
-                :data="{{ $procedureRequest->toJson() }}"
+                :data="{{ $procedureRequest->toJson() }}" 
+                :data2="{{$data2}}"
+                :data3="{{$data3}}"
                 v-cloak
                 inline-template>
             

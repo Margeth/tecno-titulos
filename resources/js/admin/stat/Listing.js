@@ -1,5 +1,5 @@
-import AppListing from '../app-components/Listing/AppListing';
+import statmix from './statmix';
 
 Vue.component('stat-listing', {
-    mixins: [AppListing]
+    mixins: [statmix]
 });

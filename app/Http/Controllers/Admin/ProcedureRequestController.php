@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use App\Models\AcademicDegree;
 use App\Models\RequestState;
+use Brackets\AdminAuth\Models\AdminUser;
+use App\Models\ModelHasRole;
+use App\Models\Role;
 use GuzzleHttp\Psr7\Request;
 
 class ProcedureRequestController extends Controller
@@ -48,7 +51,7 @@ class ProcedureRequestController extends Controller
 
         $data2=AcademicDegree::all();
         $data3=RequestState::all();
-        echo "-------------------------data".$data;
+        $val = ProcedureRequest::all();
         if ($request->ajax()) {
             if ($request->has('bulk')) {
                 return [
@@ -57,8 +60,7 @@ class ProcedureRequestController extends Controller
             }
             return ['data' => $data];
         }
-
-        return view('admin.procedure-request.index', ['data' => $data,'data2' => $data2,'data3' => $data3]);
+        return view('admin.procedure-request.index', ['data' => $data,'data2' => $data2,'data3' => $data3,'val'=>$val]);
     }
 
     /**
@@ -70,8 +72,17 @@ class ProcedureRequestController extends Controller
     public function create()
     {
         $this->authorize('admin.procedure-request.create');
-
-        return view('admin.procedure-request.create');
+        $data2=AcademicDegree::all();
+        $data3=RequestState::all();
+ /*       $rolT =Role::all()->where('name','Transcriptor')->first()->id;
+        $users = ModelHasRole::all()->where('role_id',$rolT);
+        $data4[]=[ 0 => 'Select any value'];
+        foreach ($users as $key => $value) {
+            $x= AdminUser::all()->where('id',$value->model_id)->first();
+            if ($x!=null)
+                $data4[]=$x;
+        }*/
+        return view('admin.procedure-request.create',compact('data2','data3'));
     }
 
     /**
@@ -119,10 +130,13 @@ class ProcedureRequestController extends Controller
     public function edit(ProcedureRequest $procedureRequest)
     {
         $this->authorize('admin.procedure-request.edit', $procedureRequest);
-
+        $data2=AcademicDegree::all();
+        $data3=RequestState::all();
 
         return view('admin.procedure-request.edit', [
             'procedureRequest' => $procedureRequest,
+            'data2' => $data2 ,
+            'data3' => $data3
         ]);
     }
 

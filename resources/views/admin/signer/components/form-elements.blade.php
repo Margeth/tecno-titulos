@@ -25,7 +25,9 @@
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('id_step'), 'has-success': fields.id_step && fields.id_step.valid }">
     <label for="id_step" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.signer.columns.id_step') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-        <input type="text" v-model="form.id_step" v-validate="'required|integer'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('id_step'), 'form-control-success': fields.id_step && fields.id_step.valid}" id="id_step" name="id_step" placeholder="{{ trans('admin.signer.columns.id_step') }}">
+        <select type="text" v-model="form.id_step" v-validate="'required|integer'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('id_step'), 'form-control-success': fields.id_step && fields.id_step.valid}" id="id_step" name="id_step" placeholder="{{ trans('admin.signer.columns.id_step') }}">
+          <option v-for="(item,index) in data2" :key="index" :value="item['id']"> @{{item.name}}</option>
+        </select>                 
         <div v-if="errors.has('id_step')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('id_step') }}</div>
     </div>
 </div>

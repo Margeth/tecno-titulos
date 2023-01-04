@@ -4,10 +4,14 @@
 
 @section('body')
 
+
     <procedure-request-listing
-        :data="{{ $data->toJson() }}"
+        :data="{{ $data->toJson()}}"
         :url="'{{ url('admin/procedure-requests') }}'"
+        :data2="{{ $data2}}"
+        :data3 = "{{ $data3}}"
         inline-template>
+
 
         <div class="row">
             <div class="col">
@@ -78,10 +82,10 @@
                                             </label>
                                         </td>
 
-                                    <td>@{{ item.id }}</td>
+                                        <td>@{{ item.id }}</td>
                                         <td>@{{ item.no_request }}</td>
-                                        <td>@{{item.id_academic_degree }}</td> 
-                                        <td>@{{ item.id_request_state }}</td> 
+                                        <td>@{{ getDataToArray(data2,'id',item.id_academic_degree,'name') }}</td> 
+                                        <td>@{{ getDataToArray(data3,'id',item.id_request_state,'name') }}</td> 
                                         <td>@{{ item.user_student }}</td>
                                         <td>@{{ item.user_transcriber }}</td>
 
