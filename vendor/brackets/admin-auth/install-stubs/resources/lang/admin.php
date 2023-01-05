@@ -15,13 +15,13 @@ return [
     ],
 
     'password_reset' => [
-        'title' => 'Reset Password',
+        'title' => 'RESTABLECER LA CONTRASEÑA',
         'note' => 'Reset forgotten password',
-        'button' => 'Reset password',
+        'button' => 'Restablecer la Contraseña',
     ],
 
     'forgot_password' => [
-        'title' => 'Reset Password',
+        'title' => 'Restablecer la Contraseña',
         'note' => 'Send password reset e-mail',
         'button' => 'Send Password Reset Link',
     ],

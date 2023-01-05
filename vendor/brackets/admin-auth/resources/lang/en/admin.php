@@ -2,28 +2,28 @@
 
 return [
     'auth_global' => [
-        'email' => 'Your e-mail',
-        'password' => 'Password',
+        'email' => 'Correo Electrónico',
+        'password' => 'Contraseña',
         'password_confirm' => 'Password confirmation',
     ],
 
     'login' => [
-        'title' => 'Login',
-        'sign_in_text' => 'Sign In to your account',
-        'button' => 'Login',
-        'forgot_password' => 'Forgot password?',
+        'title' => 'Iniciar Sesión',
+        'sign_in_text' => 'Iniciar Sesión Con Una Cuenta',
+        'button' => 'Iniciar Sesión',
+        'forgot_password' => 'Has Olvidado tu Contraseña?',
     ],
 
     'password_reset' => [
-        'title' => 'Reset Password',
-        'note' => 'Reset forgotten password',
-        'button' => 'Reset password',
+        'title' => 'Restablecer Contraseña',
+        'note' => 'Restablecer Contraseña Olvidada',
+        'button' => 'Restablecer la Contraseña',
     ],
 
     'forgot_password' => [
-        'title' => 'Reset Password',
-        'note' => 'Send password reset e-mail',
-        'button' => 'Send Password Reset Link',
+        'title' => 'Restablecer Contraseña',
+        'note' => 'Enviar Correo Electrónico de Restablecimiento de Contraseña',
+        'button' => 'Enviar Mensaje para Restablecer Contraseña',
     ],
 
     'activation_form' => [
@@ -34,7 +34,7 @@ return [
 
     'activations' => [
         'sent' => 'We have sent you an activation link!',
-        'activated' => 'Your account was activated!',
+        'activated' => 'Your account was activated!',//Cuenta
         'invalid_request' => 'The request failed.',
         'disabled' => 'Activation is disabled.',
     ],
@@ -48,8 +48,8 @@ return [
     ],
 
     'profile_dropdown' => [
-        'profile' => 'Profile',
-        'password' => 'Password',
-        'logout' => 'Logout',
+        'profile' => 'Perfil',
+        'password' => 'Contraseña',
+        'logout' => 'Cerrar Sesión',
     ],
 ];
