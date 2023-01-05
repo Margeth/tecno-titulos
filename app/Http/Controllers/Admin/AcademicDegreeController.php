@@ -19,6 +19,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use App\Models\Counter;
 
 class AcademicDegreeController extends Controller
 {
@@ -51,8 +52,19 @@ class AcademicDegreeController extends Controller
             }
             return ['data' => $data];
         }
-
-        return view('admin.academic-degree.index', ['data' => $data,'data2' => $data2]);
+        $contador = Counter::all()->where('route','admin.academic-degree.index')->all();
+        $val;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.academic-degree.index';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }
+        return view('admin.academic-degree.index', ['data' => $data,'data2' => $data2,'val'=>$val]);
     }
 
     /**
@@ -65,7 +77,19 @@ class AcademicDegreeController extends Controller
     {
         $this->authorize('admin.academic-degree.create');
         $data2=TypeAcademicDegree::all();
-        return view('admin.academic-degree.create',['data2' => $data2]);
+        $contador = Counter::all()->where('route','admin.academic-degree.create')->all();
+        $val;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.academic-degree.create';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }
+        return view('admin.academic-degree.create',['data2' => $data2 , 'val' =>$val]);
     }
 
     /**
@@ -115,7 +139,19 @@ class AcademicDegreeController extends Controller
         $this->authorize('admin.academic-degree.edit', $academicDegree);
 
         $data2=TypeAcademicDegree::all();
-        return view('admin.academic-degree.edit',['data2' => $data2], [
+        $contador = Counter::all()->where('route','admin.academic-degree.edit')->all();
+        $val;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.academic-degree.edit';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }
+        return view('admin.academic-degree.edit',['data2' => $data2 ,'val'=>$val ], [
             'academicDegree' => $academicDegree,
         ]);
     }

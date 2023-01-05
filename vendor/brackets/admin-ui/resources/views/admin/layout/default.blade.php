@@ -23,6 +23,11 @@
                 </div>
 
                 @yield('body')
+                @if (isset($val))
+                <p>Nro de visitas: {{$val->contador}}</p>
+                @else
+                    Hola mundo
+                @endif
             </div>
         </main>
     </div>
@@ -30,6 +35,7 @@
 
 @section('footer')
     @include('brackets/admin-ui::admin.partials.footer')
+
 @endsection
 
 @section('bottom-scripts')

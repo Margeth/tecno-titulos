@@ -10,7 +10,7 @@
         
         <academic-degree-form
             :action="'{{ url('admin/academic-degrees') }}'"
-            :data2="{{ $academicDegree}}"
+            :data2="{{ $data2}}"
             v-cloak
             inline-template>
 

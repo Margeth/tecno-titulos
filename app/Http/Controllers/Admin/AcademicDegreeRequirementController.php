@@ -56,8 +56,19 @@ class AcademicDegreeRequirementController extends Controller
             }
             return ['data' => $data];
         }
-
-        return view('admin.academic-degree-requirement.index', ['data' => $data , 'data2'=>$data2 , 'data3' => $data3]);
+        $contador = Counter::all()->where('route','admin.academic-degree-requirement.index')->all();
+        $val;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.academic-degree-requirement.index';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }
+        return view('admin.academic-degree-requirement.index', ['data' => $data , 'data2'=>$data2 , 'data3' => $data3 ,'val' =>$val]);
     }
 
     /**
@@ -72,7 +83,18 @@ class AcademicDegreeRequirementController extends Controller
 
         $data2 = Requirement::all();
         $data3 = TypeAcademicDegree::all();
-
+        $contador = Counter::all()->where('route','admin.academic-degree-requirement.create')->all();
+        $val;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.academic-degree-requirement.create';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }
         return view('admin.academic-degree-requirement.create',compact('data2','data3'));
     }
 
@@ -123,7 +145,18 @@ class AcademicDegreeRequirementController extends Controller
         $this->authorize('admin.academic-degree-requirement.edit', $academicDegreeRequirement);
         $data2 = Requirement::all();
         $data3 = TypeAcademicDegree::all();
-
+        $contador = Counter::all()->where('route','admin.academic-degree-requirement.edit')->all();
+        $val;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.academic-degree-requirement.edit';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }
         return view('admin.academic-degree-requirement.edit', [
             'academicDegreeRequirement' => $academicDegreeRequirement,
             'data2'=>$data2 , 

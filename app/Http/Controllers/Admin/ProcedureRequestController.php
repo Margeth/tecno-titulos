@@ -25,6 +25,7 @@ use Brackets\AdminAuth\Models\AdminUser;
 use App\Models\ModelHasRole;
 use App\Models\Role;
 use GuzzleHttp\Psr7\Request;
+use App\Models\Counter;
 
 class ProcedureRequestController extends Controller
 {
@@ -51,7 +52,6 @@ class ProcedureRequestController extends Controller
 
         $data2=AcademicDegree::all();
         $data3=RequestState::all();
-        $val = ProcedureRequest::all();
         if ($request->ajax()) {
             if ($request->has('bulk')) {
                 return [
@@ -59,6 +59,18 @@ class ProcedureRequestController extends Controller
                 ];
             }
             return ['data' => $data];
+        }
+        $contador = Counter::all()->where('route','admin.procedure-request.index')->all();
+        $val;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.procedure-request.index';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
         }
         return view('admin.procedure-request.index', ['data' => $data,'data2' => $data2,'data3' => $data3,'val'=>$val]);
     }
@@ -74,15 +86,19 @@ class ProcedureRequestController extends Controller
         $this->authorize('admin.procedure-request.create');
         $data2=AcademicDegree::all();
         $data3=RequestState::all();
- /*       $rolT =Role::all()->where('name','Transcriptor')->first()->id;
-        $users = ModelHasRole::all()->where('role_id',$rolT);
-        $data4[]=[ 0 => 'Select any value'];
-        foreach ($users as $key => $value) {
-            $x= AdminUser::all()->where('id',$value->model_id)->first();
-            if ($x!=null)
-                $data4[]=$x;
-        }*/
-        return view('admin.procedure-request.create',compact('data2','data3'));
+        $contador = Counter::all()->where('route','admin.procedure-request.create')->all();
+        $val;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.procedure-request.create';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }
+        return view('admin.procedure-request.create',compact('data2','data3','val'));
     }
 
     /**
@@ -133,10 +149,24 @@ class ProcedureRequestController extends Controller
         $data2=AcademicDegree::all();
         $data3=RequestState::all();
 
+        $contador = Counter::all()->where('route','admin.procedure-request.edit')->all();
+        $val;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.procedure-request.edit';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }
+
         return view('admin.procedure-request.edit', [
             'procedureRequest' => $procedureRequest,
             'data2' => $data2 ,
-            'data3' => $data3
+            'data3' => $data3 ,
+            'val' => $val
         ]);
     }
 
