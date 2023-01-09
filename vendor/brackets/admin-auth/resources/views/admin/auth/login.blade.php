@@ -3,7 +3,21 @@
 @section('title', trans('brackets/admin-auth::admin.login.title'))
 
 @section('content')
+<style>
+	.main {
+		text-align: right;
+		font-size: 17px;
+		font-weight: bold;
+		text-decoration-line: underline;
+		text-decoration-color: rgb(2, 173, 216);
+		margin: 20px 0px 10px 5px;
+		}
+</style>
 	<div class="container" id="app">
+		<div class="main">
+			<a href="{{ url('/') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Inicio</a>
+		</div>
+		
 	    <div class="row align-items-center justify-content-center auth">
 	        <div class="col-md-6 col-lg-5">
 				<div class="card">

@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use App\Models\Requirement;
 use App\Models\TypeAcademicDegree;
+use App\Models\Counter;
 
 class AcademicDegreeRequirementController extends Controller
 {
