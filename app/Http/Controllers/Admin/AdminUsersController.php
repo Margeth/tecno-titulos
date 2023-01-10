@@ -123,6 +123,7 @@ class AdminUsersController extends Controller
      */
     public function store(StoreAdminUser $request)
     {
+        
         // Sanitize input
         $sanitized = $request->getModifiedData();
 
@@ -137,6 +138,8 @@ class AdminUsersController extends Controller
         }
 
         return redirect('admin/admin-users');
+        
+        
     }
 
     /**

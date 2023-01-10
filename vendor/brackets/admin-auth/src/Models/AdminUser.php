@@ -42,6 +42,15 @@ class AdminUser extends Authenticatable implements CanActivateContract, HasMedia
         'forbidden',
         'language',
         'last_login_at',
+        'activated',
+        'ci',
+        'code',
+        'gender',
+        'date_of_birth',
+        'country',
+        'city',
+        'province',
+    
     ];
 
     protected $hidden = [
