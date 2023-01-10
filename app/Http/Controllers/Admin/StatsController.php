@@ -12,6 +12,7 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use App\Models\Counter;
 
 class StatsController extends Controller
 {
@@ -57,7 +58,21 @@ class StatsController extends Controller
         $chart->labels = (array_keys($collecion));
         $chart->dataset = (array_values($collecion));
         $chart->colours = $colours;
-        return view('admin.stat.index', compact('chart'));
+
+
+        $contador = Counter::all()->where('route','admin.stat.index')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.stat.index';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'val'=>$val
+        return view('admin.stat.index', compact('chart'),['val'=>$val]);
     }
 
 

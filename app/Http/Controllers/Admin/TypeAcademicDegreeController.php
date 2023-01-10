@@ -19,6 +19,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use App\Models\Counter;
 
 
 class TypeAcademicDegreeController extends Controller
@@ -53,7 +54,19 @@ class TypeAcademicDegreeController extends Controller
             return ['data' => $data];
         }
 
-        return view('admin.type-academic-degree.index', ['data' => $data]);
+        $contador = Counter::all()->where('route','admin.type-academic-degree.index')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.type-academic-degree.index';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'val'=>$val
+        return view('admin.type-academic-degree.index', ['data' => $data,'val'=>$val]);
     }
 
     /**
@@ -65,8 +78,19 @@ class TypeAcademicDegreeController extends Controller
     public function create()
     {
         $this->authorize('admin.type-academic-degree.create');
-
-        return view('admin.type-academic-degree.create');
+        $contador = Counter::all()->where('route','admin.type-academic-degree.create')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.type-academic-degree.create';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'val'=>$val
+        return view('admin.type-academic-degree.create',['val'=>$val]);
     }
 
     /**
@@ -114,10 +138,22 @@ class TypeAcademicDegreeController extends Controller
     public function edit(TypeAcademicDegree $typeAcademicDegree)
     {
         $this->authorize('admin.type-academic-degree.edit', $typeAcademicDegree);
-
+        $contador = Counter::all()->where('route','admin.type-academic-degree.edit')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.type-academic-degree.edit';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'val'=>$val
 
         return view('admin.type-academic-degree.edit', [
             'typeAcademicDegree' => $typeAcademicDegree,
+            'val'=>$val,
         ]);
     }
 

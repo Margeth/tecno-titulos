@@ -20,6 +20,7 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use App\Models\StepSigner;
+use App\Models\Counter;
 
 class SignerController extends Controller
 {
@@ -53,8 +54,19 @@ class SignerController extends Controller
             }
             return ['data' => $data];
         }
-        
-        return view('admin.signer.index', ['data' => $data,'data2' => $data2]);
+        $contador = Counter::all()->where('route','admin.signer.index')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.signer.index';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'val'=>$val
+        return view('admin.signer.index', ['data' => $data,'data2' => $data2,'val'=>$val]);
     }
 
     /**
@@ -67,8 +79,19 @@ class SignerController extends Controller
     {
         $data2=StepSigner::all();
         $this->authorize('admin.signer.create');
-
-        return view('admin.signer.create',['data2' => $data2]);
+        $contador = Counter::all()->where('route','admin.signer.create')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.signer.create';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'val'=>$val
+        return view('admin.signer.create',['data2' => $data2,'val'=>$val]);
     }
 
     /**
@@ -117,9 +140,21 @@ class SignerController extends Controller
     {
         $this->authorize('admin.signer.edit', $signer);
         $data2=StepSigner::all();
-
+        $contador = Counter::all()->where('route','admin.signer.edit')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.signer.edit';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'val'=>$val
         return view('admin.signer.edit',['data2' => $data2], [
             'signer' => $signer,
+            'val'=>$val,
         ]);
     }
 

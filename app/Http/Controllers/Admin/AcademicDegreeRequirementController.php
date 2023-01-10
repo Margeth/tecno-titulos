@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use App\Models\Requirement;
 use App\Models\TypeAcademicDegree;
+use App\Models\Counter;
 
 class AcademicDegreeRequirementController extends Controller
 {
@@ -57,7 +58,7 @@ class AcademicDegreeRequirementController extends Controller
             return ['data' => $data];
         }
         $contador = Counter::all()->where('route','admin.academic-degree-requirement.index')->all();
-        $val;
+        
         if ( sizeOf($contador)==0 ){
             $val = new Counter();
             $val->route='admin.academic-degree-requirement.index';
@@ -84,7 +85,7 @@ class AcademicDegreeRequirementController extends Controller
         $data2 = Requirement::all();
         $data3 = TypeAcademicDegree::all();
         $contador = Counter::all()->where('route','admin.academic-degree-requirement.create')->all();
-        $val;
+        
         if ( sizeOf($contador)==0 ){
             $val = new Counter();
             $val->route='admin.academic-degree-requirement.create';
@@ -94,8 +95,8 @@ class AcademicDegreeRequirementController extends Controller
             $val = reset($contador);
             $val->contador = $val->contador + 1;
             $val->save();
-        }
-        return view('admin.academic-degree-requirement.create',compact('data2','data3'));
+        }//,'val'=>$val
+        return view('admin.academic-degree-requirement.create',compact('data2','data3','val'));
     }
 
     /**
@@ -146,7 +147,7 @@ class AcademicDegreeRequirementController extends Controller
         $data2 = Requirement::all();
         $data3 = TypeAcademicDegree::all();
         $contador = Counter::all()->where('route','admin.academic-degree-requirement.edit')->all();
-        $val;
+        
         if ( sizeOf($contador)==0 ){
             $val = new Counter();
             $val->route='admin.academic-degree-requirement.edit';
@@ -161,6 +162,7 @@ class AcademicDegreeRequirementController extends Controller
             'academicDegreeRequirement' => $academicDegreeRequirement,
             'data2'=>$data2 , 
             'data3'=>$data3 ,
+            'val'=>$val ,
         ]);
     }
 

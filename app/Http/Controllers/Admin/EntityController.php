@@ -19,7 +19,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
-
+use App\Models\Counter;
 class EntityController extends Controller
 {
 
@@ -51,8 +51,20 @@ class EntityController extends Controller
             }
             return ['data' => $data];
         }
+        $contador = Counter::all()->where('route','admin.entity.index')->all();
+        //$val; use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.entity.index';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'val' => $val
 
-        return view('admin.entity.index', ['data' => $data]);
+        return view('admin.entity.index', ['data' => $data,'val' => $val]);
     }
 
     /**
@@ -64,8 +76,20 @@ class EntityController extends Controller
     public function create()
     {
         $this->authorize('admin.entity.create');
+        $contador = Counter::all()->where('route','admin.entity.create')->all();
+        //$val; use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.entity.create';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'val' => $val
 
-        return view('admin.entity.create');
+        return view('admin.entity.create',['val' => $val]);
     }
 
     /**
@@ -113,10 +137,22 @@ class EntityController extends Controller
     public function edit(Entity $entity)
     {
         $this->authorize('admin.entity.edit', $entity);
-
+        $contador = Counter::all()->where('route','admin.entity.edit')->all();
+        //$val; use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.entity.edit';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'val' => $val
 
         return view('admin.entity.edit', [
             'entity' => $entity,
+            'val' => $val,
         ]);
     }
 

@@ -19,6 +19,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use App\Models\Counter;
 
 class PermissionsController extends Controller
 {
@@ -51,8 +52,19 @@ class PermissionsController extends Controller
             }
             return ['data' => $data];
         }
-
-        return view('admin.permission.index', ['data' => $data]);
+        $contador = Counter::all()->where('route','admin.permission.index')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.permission.index';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'data' => $data
+        return view('admin.permission.index', ['data' => $data,'val' => $val]);
     }
 
     /**
@@ -64,8 +76,19 @@ class PermissionsController extends Controller
     public function create()
     {
         $this->authorize('admin.permission.create');
-
-        return view('admin.permission.create');
+        $contador = Counter::all()->where('route','admin.permission.create')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.permission.create';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'val' => $val
+        return view('admin.permission.create',['val' => $val]);
     }
 
     /**
@@ -113,10 +136,22 @@ class PermissionsController extends Controller
     public function edit(Permission $permission)
     {
         $this->authorize('admin.permission.edit', $permission);
-
+        $contador = Counter::all()->where('route','admin.permission.edit')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.permission.edit';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'val' => $val
 
         return view('admin.permission.edit', [
             'permission' => $permission,
+            'val' => $val,
         ]);
     }
 

@@ -19,6 +19,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use App\Models\Counter;
 
 class RolesController extends Controller
 {
@@ -51,8 +52,20 @@ class RolesController extends Controller
             }
             return ['data' => $data];
         }
-
-        return view('admin.role.index', ['data' => $data]);
+        $contador = Counter::all()->where('route','admin.role.index')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.role.index';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }
+        
+        return view('admin.role.index', ['data' => $data,'val'=>$val]);
     }
 
     /**
@@ -64,8 +77,19 @@ class RolesController extends Controller
     public function create()
     {
         $this->authorize('admin.role.create');
-
-        return view('admin.role.create');
+        $contador = Counter::all()->where('route','admin.role.create')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.role.create';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'val'=>$val
+        return view('admin.role.create',['val'=>$val]);
     }
 
     /**
@@ -113,10 +137,22 @@ class RolesController extends Controller
     public function edit(Role $role)
     {
         $this->authorize('admin.role.edit', $role);
-
+        $contador = Counter::all()->where('route','admin.role.edit')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.role.edit';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'val'=>$val
 
         return view('admin.role.edit', [
             'role' => $role,
+            'val'=>$val,
         ]);
     }
 

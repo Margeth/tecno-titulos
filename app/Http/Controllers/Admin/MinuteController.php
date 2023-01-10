@@ -19,6 +19,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use App\Models\Counter;
 
 class MinuteController extends Controller
 {
@@ -51,8 +52,19 @@ class MinuteController extends Controller
             }
             return ['data' => $data];
         }
-
-        return view('admin.minute.index', ['data' => $data]);
+        $contador = Counter::all()->where('route','admin.minute.index')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.minute.index';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }
+        return view('admin.minute.index', ['data' => $data,'val'=>$val]);
     }
 
     /**
@@ -64,8 +76,19 @@ class MinuteController extends Controller
     public function create()
     {
         $this->authorize('admin.minute.create');
-
-        return view('admin.minute.create');
+        $contador = Counter::all()->where('route','admin.minute.create')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.minute.create';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }
+        return view('admin.minute.create',['val' => $val]);
     }
 
     /**
@@ -113,10 +136,22 @@ class MinuteController extends Controller
     public function edit(Minute $minute)
     {
         $this->authorize('admin.minute.edit', $minute);
-
+        $contador = Counter::all()->where('route','admin.minute.edit')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.minute.edit';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }
 
         return view('admin.minute.edit', [
             'minute' => $minute,
+            'val' => $val,
         ]);
     }
 

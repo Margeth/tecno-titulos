@@ -24,6 +24,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Config;
 use Illuminate\View\View;
+use App\Models\Counter;
 
 class AdminUsersController extends Controller
 {
@@ -68,8 +69,21 @@ class AdminUsersController extends Controller
         if ($request->ajax()) {
             return ['data' => $data, 'activation' => Config::get('admin-auth.activation_enabled')];
         }
+        //----
+        $contador = Counter::all()->where('route','admin.admin-user.index')->all();
+        //$val; use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.admin-user.index';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }
 
-        return view('admin.admin-user.index', ['data' => $data, 'activation' => Config::get('admin-auth.activation_enabled')]);
+        return view('admin.admin-user.index', ['data' => $data, 'activation' => Config::get('admin-auth.activation_enabled'),'val'=>$val]);
     }
 
     /**
@@ -81,11 +95,24 @@ class AdminUsersController extends Controller
     public function create()
     {
         $this->authorize('admin.admin-user.create');
-
+        //----
+        $contador = Counter::all()->where('route','admin.admin-user.index')->all();
+        //$val;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.admin-user.index';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }
         return view('admin.admin-user.create', [
             'activation' => Config::get('admin-auth.activation_enabled'),
             'roles' => Role::where('guard_name', $this->guard)->get(),
-        ]);
+            'val'=>$val]
+        );
     }
 
     /**
@@ -138,11 +165,23 @@ class AdminUsersController extends Controller
         $this->authorize('admin.admin-user.edit', $adminUser);
 
         $adminUser->load('roles');
-
+         //----
+         $contador = Counter::all()->where('route','admin.admin-user.edit')->all();
+         //$val;
+         if ( sizeOf($contador)==0 ){
+             $val = new Counter();
+             $val->route='admin.admin-user.edit';
+             $val->contador = 1;
+             $val->save();
+         }else{
+             $val = reset($contador);
+             $val->contador = $val->contador + 1;
+             $val->save();
+         }
         return view('admin.admin-user.edit', [
             'adminUser' => $adminUser,
             'activation' => Config::get('admin-auth.activation_enabled'),
-            'roles' => Role::where('guard_name', $this->guard)->get(),
+            'roles' => Role::where('guard_name', $this->guard)->get(),'val'=>$val
         ]);
     }
 

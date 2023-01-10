@@ -53,7 +53,7 @@ class AcademicDegreeController extends Controller
             return ['data' => $data];
         }
         $contador = Counter::all()->where('route','admin.academic-degree.index')->all();
-        $val;
+        //$val;
         if ( sizeOf($contador)==0 ){
             $val = new Counter();
             $val->route='admin.academic-degree.index';
@@ -78,7 +78,7 @@ class AcademicDegreeController extends Controller
         $this->authorize('admin.academic-degree.create');
         $data2=TypeAcademicDegree::all();
         $contador = Counter::all()->where('route','admin.academic-degree.create')->all();
-        $val;
+       // $val;
         if ( sizeOf($contador)==0 ){
             $val = new Counter();
             $val->route='admin.academic-degree.create';
@@ -140,7 +140,7 @@ class AcademicDegreeController extends Controller
 
         $data2=TypeAcademicDegree::all();
         $contador = Counter::all()->where('route','admin.academic-degree.edit')->all();
-        $val;
+       // $val;
         if ( sizeOf($contador)==0 ){
             $val = new Counter();
             $val->route='admin.academic-degree.edit';

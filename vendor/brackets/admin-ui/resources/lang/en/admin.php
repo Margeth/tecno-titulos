@@ -109,7 +109,7 @@ return [
     ],
 
     'pagination' => [
-        'overview' => 'Displaying items from {{ pagination.state.from }} to {{ pagination.state.to }} of total {{ pagination.state.total }} items.'
+        'overview' => ''//Displaying items from {{ pagination.state.from }} to {{ pagination.state.to }} of total {{ pagination.state.total }} items.'
     ],
 
     'logo' => [

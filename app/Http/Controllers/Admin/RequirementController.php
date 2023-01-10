@@ -19,6 +19,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use App\Models\Counter;
 
 class RequirementController extends Controller
 {
@@ -51,8 +52,20 @@ class RequirementController extends Controller
             }
             return ['data' => $data];
         }
-
-        return view('admin.requirement.index', ['data' => $data]);
+        $contador = Counter::all()->where('route','admin.requirement.index')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.requirement.index';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }
+        
+        return view('admin.requirement.index', ['data' => $data,'val'=>$val]);
     }
 
     /**
@@ -64,8 +77,19 @@ class RequirementController extends Controller
     public function create()
     {
         $this->authorize('admin.requirement.create');
-
-        return view('admin.requirement.create');
+        $contador = Counter::all()->where('route','admin.requirement.create')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.requirement.create';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'val'=>$val
+        return view('admin.requirement.create',['val'=>$val]);
     }
 
     /**
@@ -113,10 +137,22 @@ class RequirementController extends Controller
     public function edit(Requirement $requirement)
     {
         $this->authorize('admin.requirement.edit', $requirement);
-
+        $contador = Counter::all()->where('route','admin.requirement.edit')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.requirement.edit';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'val'=>$val
 
         return view('admin.requirement.edit', [
             'requirement' => $requirement,
+            'val'=>$val
         ]);
     }
 

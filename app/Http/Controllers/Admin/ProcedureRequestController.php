@@ -61,7 +61,7 @@ class ProcedureRequestController extends Controller
             return ['data' => $data];
         }
         $contador = Counter::all()->where('route','admin.procedure-request.index')->all();
-        $val;
+        //$val;
         if ( sizeOf($contador)==0 ){
             $val = new Counter();
             $val->route='admin.procedure-request.index';
@@ -87,7 +87,7 @@ class ProcedureRequestController extends Controller
         $data2=AcademicDegree::all();
         $data3=RequestState::all();
         $contador = Counter::all()->where('route','admin.procedure-request.create')->all();
-        $val;
+        //$val;
         if ( sizeOf($contador)==0 ){
             $val = new Counter();
             $val->route='admin.procedure-request.create';
@@ -150,7 +150,7 @@ class ProcedureRequestController extends Controller
         $data3=RequestState::all();
 
         $contador = Counter::all()->where('route','admin.procedure-request.edit')->all();
-        $val;
+        //$val;
         if ( sizeOf($contador)==0 ){
             $val = new Counter();
             $val->route='admin.procedure-request.edit';

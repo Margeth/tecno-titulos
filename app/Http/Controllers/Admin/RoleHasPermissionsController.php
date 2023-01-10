@@ -19,6 +19,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use App\Models\Counter;
 
 class RoleHasPermissionsController extends Controller
 {
@@ -42,8 +43,20 @@ class RoleHasPermissionsController extends Controller
             }
             return ['data' => $data];
         }*/
-
-        return view('admin.role-has-permission.index', ['data' => $data]);
+        $contador = Counter::all()->where('route','admin.role-has-permission.index')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.role-has-permission.index';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }
+        
+        return view('admin.role-has-permission.index', ['data' => $data,'val'=>$val]);
     }
 
     /**
@@ -55,8 +68,19 @@ class RoleHasPermissionsController extends Controller
     public function create()
     {
         $this->authorize('admin.role-has-permission.create');
-
-        return view('admin.role-has-permission.create');
+        $contador = Counter::all()->where('route','admin.role-has-permission.create')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.role-has-permission.create';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'val'=>$val,
+        return view('admin.role-has-permission.create',['val'=>$val]);
     }
 
     /**
@@ -104,10 +128,22 @@ class RoleHasPermissionsController extends Controller
     public function edit(RoleHasPermission $roleHasPermission)
     {
         $this->authorize('admin.role-has-permission.edit', $roleHasPermission);
-
+        $contador = Counter::all()->where('route','admin.role-has-permission.edit')->all();
+        //$val;use App\Models\Counter;
+        if ( sizeOf($contador)==0 ){
+            $val = new Counter();
+            $val->route='admin.role-has-permission.edit';
+            $val->contador = 1;
+            $val->save();
+        }else{
+            $val = reset($contador);
+            $val->contador = $val->contador + 1;
+            $val->save();
+        }//'val'=>$val,
 
         return view('admin.role-has-permission.edit', [
             'roleHasPermission' => $roleHasPermission,
+            'val'=>$val,
         ]);
     }
 
